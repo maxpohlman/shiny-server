@@ -1,6 +1,7 @@
 
 library(shiny)
 library(dplyr)
+library(ggplot2)
 shinyApp(
 ui =fluidPage(
   titlePanel("Max's Data"),
