@@ -17,13 +17,13 @@ ui =fluidPage(
       
       checkboxGroupInput("Round", 
                          label = "Select rounds to display",
-                         choices = c('Round One' = '1', 'Round Two' = '2',
-                                      'Round Three' = '3'),
-                         selected = "2"),
+                         choices = c('Round One', 'Round Two',
+                                      'Round Three'),
+                         selected = "Round One"),
       checkboxGroupInput("Gender", 
                          label = "Select gender of participants",
-                         choices = c('Male' = '1','Female' = '0'),
-                         selected = "1"),
+                         choices = c('Male','Female'),
+                         selected = "Male"),
       selectInput("xvar", label = "Xvar", choices = c('Gender',
                                                       'Round',
                                                       'Treatment'),
@@ -45,7 +45,7 @@ server = function(input,output){
   data<-read.csv('mydata.csv', header=TRUE)
 
 output$plot <- renderPlot({
-  adata<-data[data[[input$xvar]] %in% input[[input$xvar]] & data[[input$fvar]] %in% input[[input$fvar]],] #subsets data based on the x var and fill var - this works
+  adata<-data[data[[input$xvar]] %in% input[[input$xvar]] & data[[input$fvar]] %in% input[[input$fvar]] & data$Gender %in% input$Gender,] #subsets data based on the x var and fill var - this works
  
   plottable <-data.frame(x=adata[[input$xvar]], y=adata$efficiency, f=adata[[input$fvar]])
 
