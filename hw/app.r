@@ -17,12 +17,12 @@ ui =fluidPage(
       
       checkboxGroupInput("Round", 
                          label = "Select rounds to display",
-                         choices = c('1', '2',
-                                      '3'),
+                         choices = c('Round One' = '1', 'Round Two' = '2',
+                                      'Round Three' = '3'),
                          selected = "2"),
       checkboxGroupInput("Gender", 
                          label = "Select gender of participants",
-                         choices = c('1','0'),
+                         choices = c('Male' = '1','Female' = '0'),
                          selected = "1"),
       selectInput("xvar", label = "Xvar", choices = c('Gender',
                                                       'Round',
@@ -35,6 +35,7 @@ ui =fluidPage(
     ),
     mainPanel(
       plotOutput('plot')
+ 
     )
   
 )),
@@ -42,13 +43,17 @@ ui =fluidPage(
 #Takes two of the users selection, xvar and fvar, and plots as grouped bar graph where the x value is xvar and the group/fill is fvar
 server = function(input,output){
   data<-read.csv('mydata.csv', header=TRUE)
+
 output$plot <- renderPlot({
   adata<-data[data[[input$xvar]] %in% input[[input$xvar]] & data[[input$fvar]] %in% input[[input$fvar]],] #subsets data based on the x var and fill var - this works
- p<-adata %>%
-   group_by(input$xvar, input$fvar) %>% #groups by the two vars, but needs to group by the variables (Treatment, Round) and not ('Treatment', 'Round')
-   summarize(tm = mean(efficiency)) %>% 
-    ggplot(aes(x = input$xvar, y =tm)) +
-    geom_bar(aes(fill = as.factor(input$fvar)), position = "dodge", stat="identity")
+ 
+  plottable <-data.frame(x=adata[[input$xvar]], y=adata$efficiency, f=adata[[input$fvar]])
+
+   p<-plottable %>%
+   group_by(x, f) %>% #groups by the two vars, but needs to group by (Treatment, Round) and not ('Treatment', 'Round')
+   summarize(tm = mean(y)) %>% 
+    ggplot(aes(x = x, y =tm)) +
+    geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity")
  print(p)
 })
 }

@@ -15,7 +15,7 @@ p<-adata %>%
 p
 
 test <-adata %>%
-  group_by(as.name(tstr)), Round) %>%
+  group_by(as.name(tstr), Round) %>%
   summarize(tm = mean(efficiency))
 
 testas <- 5
