@@ -54,7 +54,8 @@ output$plot <- renderPlot({
    group_by(x, f) %>% #groups by the two vars, but needs to group by (Treatment, Round) and not ('Treatment', 'Round')
    summarize(tm = mean(y)) %>% 
     ggplot(aes(x = x, y =tm)) +
-    geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity")
+    geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity") +
+     geom_text(aes(x,label=round(tm*100,2), group=f), position = position_dodge(width = .9), size = 8, vjust = 1.5)
  print(p)
 })
 }
