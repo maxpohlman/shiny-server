@@ -8,7 +8,8 @@ ui =fluidPage(
   
   sidebarLayout(
     sidebarPanel(
-      helpText("Help Text"),
+      p("This is a work in progress using made-up data. Check back in the coming months as I will be adding
+        more graphing options, statistical results, and impliment the completed dataset", style =  "font-si18pt"),
       
       checkboxGroupInput("Treatment", 
                   label = "Select treatments to display",
@@ -25,11 +26,11 @@ ui =fluidPage(
                          label = "Select gender of participants",
                          choices = c('Male','Female'),
                          selected = "Male"),
-      selectInput("xvar", label = "Xvar", choices = c('Gender',
+      selectInput("xvar", label = "X variable", choices = c('Gender',
                                                       'Round',
                                                       'Treatment'),
                   selected = 'Treatment'),
-      selectInput("fvar", label = "Fvar", choices = c('Gender',
+      selectInput("fvar", label = "Fill variable", choices = c('Gender',
                                                       'Round',
                                                       'Treatment'),
                   selected = 'Round') 
@@ -55,8 +56,10 @@ output$plot <- renderPlot({
    summarize(tm = mean(y)) %>% 
     ggplot(aes(x = x, y =tm)) +
     geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity") +
-     geom_text(aes(x,label=round(tm*100,2), group=f), position = position_dodge(width = .9), size = 8, vjust = 1.5)
- print(p)
+     geom_text(aes(x,label=round(tm*100,2), group=f), position = position_dodge(width = .9), size = 8, vjust = 1.5) +
+     labs(y = 'Bargain Efficiency') +
+     theme(axis.text=element_text(size=14), axis.title=element_text(size=16,face="bold"), legend.text=element_text(size=14), legend.title = element_blank())
+ print(p) 
 })
 }
 )
