@@ -9,30 +9,39 @@ ui =fluidPage(
   sidebarLayout(
     sidebarPanel(
       p("This is a work in progress using made-up data. Check back in the coming months as I will be adding
-        more graphing options, statistical results, and impliment the completed dataset", style =  "font-si18pt"),
+        more graphing options, statistical results, and impliment the completed dataset", style =  "font-si20pt"),
       
       checkboxGroupInput("Treatment", 
                   label = "Select treatments to display",
                   choices = c("Certainty", "Uncertainty",
                               "Ambiguity"),
-                  selected = "Certainty"),
+                  selected = c("Certainty", "Uncertainty",
+                               "Ambiguity")),
       
       checkboxGroupInput("Round", 
                          label = "Select rounds to display",
                          choices = c('Round One', 'Round Two',
                                       'Round Three'),
-                         selected = "Round One"),
+                         selected = c('Round One', 'Round Two',
+                                      'Round Three')),
       checkboxGroupInput("Gender", 
                          label = "Select gender of participants",
                          choices = c('Male','Female'),
-                         selected = "Male"),
+                         selected = c('Male','Female')),
+      checkboxGroupInput("Major", 
+                         label = "Select major of participants",
+                         choices = c('Biology' = 'BIO','Resource Economics' = 'ENRE', 'Marine Affairs' = 'MAF', 'Other'),
+                         selected = c('BIO','ENRE', 'MAF', 'Other')),
+                         
       selectInput("xvar", label = "X variable", choices = c('Gender',
                                                       'Round',
-                                                      'Treatment'),
+                                                      'Treatment',
+                                                      'Major'),
                   selected = 'Treatment'),
       selectInput("fvar", label = "Fill variable", choices = c('Gender',
                                                       'Round',
-                                                      'Treatment'),
+                                                      'Treatment',
+                                                      'Major'),
                   selected = 'Round') 
     ),
     mainPanel(
@@ -47,7 +56,7 @@ server = function(input,output){
   data<-read.csv('mydata.csv', header=TRUE)
 
 output$plot <- renderPlot({
-  adata<-data[data[[input$xvar]] %in% input[[input$xvar]] & data[[input$fvar]] %in% input[[input$fvar]] & data$Gender %in% input$Gender,] #subsets data based on the x var and fill var - this works
+  adata<-data[data[[input$xvar]] %in% input[[input$xvar]] & data[[input$fvar]] %in% input[[input$fvar]] & data$Gender %in% input$Gender & data$Major %in% input$Major,] #subsets data based on the x var and fill var - this works
  
   plottable <-data.frame(x=adata[[input$xvar]], y=adata$efficiency, f=adata[[input$fvar]])
 
