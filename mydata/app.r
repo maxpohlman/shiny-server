@@ -11,6 +11,7 @@ shinyApp(
                                p("This is a work in progress using monte-carlo simulated data. Check back in the coming months as I will be adding
                                  more graphing options, statistical results, and implement the completed dataset", style =  "font-si20pt"),
                                
+                      #Adds Buttons         
                                checkboxGroupInput("Treatment", 
                                                   label = "Select treatments to display",
                                                   choices = c("Certainty", "Uncertainty",
@@ -47,8 +48,10 @@ shinyApp(
                                
                                
                                ),
+                      #Adds plot area
                              mainPanel(
                                plotOutput('plot'),
+                      #Adds t-test area
                                fluidRow(
                                  column(2,selectInput("t1", label = "Choose Category for T Test", choices = c('Gender',
                                                                                                               'Round',
@@ -63,6 +66,8 @@ shinyApp(
                              )
                              
                            )),
+                  
+                  #Adds second and third tabs, as well as table area in tab 2
                   tabPanel(HTML("Dataset</a></li><li><a href=\"http://maxpohlman.com\">Back to my website"),
                            
                            mainPanel(
@@ -74,11 +79,12 @@ shinyApp(
                            
                   )),
   
-  #Takes two of the users selection, xvar and fvar, and plots as grouped bar graph where the x value is xvar and the group/fill is fvar
   server = function(input,output,session){
-    data<-read.csv('mydata.csv', header=TRUE)
+    data<-read.csv('mydata.csv', header=TRUE) #Not used at the moment
     
-    #Observes for t test variables
+    ################################# 
+    # Observes for t test variables #
+    #################################
     
     observe({
       if (input$t1 == 'Treatment'){
@@ -110,7 +116,10 @@ shinyApp(
     })
     
     
-    #Generates random numbers with individual and treatment effects
+    #############################################################################  
+    # Generates random efficiency numbers with individual and treatment effects #
+    #############################################################################
+    
     set.seed(12345)
     t <- data.frame('a' = c('Certainty','Uncertainty','Ambiguity'), 'v' = rnorm(3, mean = .75, sd = .1))
     m<- data.frame('a' = c('ENRE', 'BIO', 'NRS', 'MAF', 'Other'), 'v' = rnorm(5, mean = .75, sd = .1))
@@ -128,21 +137,29 @@ shinyApp(
       df$Major[i]<-sample(m$a,1)
       df$Round[i]<-sample(r$a,1)
       df$Gender[i]<-sample(g$a,1)
-      df$efficiency[i]<-t$v[match(df$Treatment[i],t$a)] * m$v[match(df$Major[i],m$a)] * g$v[match(df$Gender[i],g$a)] + r$v[match(df$Round[i],r$a)] * rnorm(1,mean=.35, sd=.1)
+      df$efficiency[i]<-t$v[match(df$Treatment[i],t$a)] * m$v[match(df$Major[i],m$a)] * g$v[match(df$Gender[i],g$a)] + 
+                        r$v[match(df$Round[i],r$a)] * rnorm(1,mean=.35, sd=.1)
       
     }
     data<-df
     
+    #####################################################################################  
+    # Plots the data by selecting the columns that are inputted in the two SelectInputs #
+    #####################################################################################
+    
     output$plot <- renderPlot({
-      adata<-data[data$Treatment %in% input$Treatment& data$Round %in% input$Round & data$Gender %in% input$Gender & data$Major %in% input$Major,] #subsets data based on the x var and fill var - this works
+      adata<-data[data$Treatment %in% input$Treatment& data$Round %in% input$Round & data$Gender %in% input$Gender 
+                  & data$Major %in% input$Major,] #subsets data based on selected values of Gender/Major/Round/Treatment
       
+      #Grabs the three variables to be plotted
       plottable <-data.frame(x=adata[[input$xvar]], y=adata$efficiency, f=adata[[input$fvar]])
       
+      
       p<-plottable %>%
-        group_by(x, f) %>% #groups by the two vars, but needs to group by (Treatment, Round) and not ('Treatment', 'Round')
-        summarize(tm = mean(y),see=sd(y)) %>% 
-        mutate(se = see/sqrt(length(see))) %>%
-        mutate(ci = se*1.96) %>%
+        group_by(x, f) %>% #groups by the two vars selected
+        summarize(tm = mean(y),see=sd(y)) %>% #calculates mean and sd
+        mutate(se = see/sqrt(length(see))) %>% #converts to standard error
+        mutate(ci = se*1.96) %>%               #converts to confidence intervals
         ggplot(aes(x = x, y =tm)) +
         geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity") + 
         geom_errorbar(aes(ymin=tm-se, ymax=tm+se, group=f),
@@ -153,11 +170,15 @@ shinyApp(
       print(p) 
     })
     
+    ##################################################################
+    # Performs the t-test at 95% confidence for differences of means #
+    ##################################################################
+    
     output$text<-renderTable({
       t1<-input$t1
       t2<-input$t2
       t3<-input$t3
-      if(t2==t3){
+      if(t2==t3){ #If the two variables are the same, give error message
         op<-data.frame('T-stat'= '', 'Degrees of Freedom' = 'Needs two different variables', 'P-Value' = '')
       }
       else{
