@@ -49,14 +49,15 @@ ui =fluidPage(
     ),
     mainPanel(
       plotOutput('plot'),
-      selectInput("t1", label = "Choose Category for T Test", choices = c('Gender',
+      fluidRow(
+      column(2,selectInput("t1", label = "Choose Category for T Test", choices = c('Gender',
                                                                           'Round',
                                                                           'Treatment',
                                                                           'Major'),
-                  selected = 'Treatment'),
-      selectInput("t2", label = "Choose First variable for T Test", choices = 'test'),
+                  selected = 'Treatment')),
+      column(2,selectInput("t2", label = "Choose First variable for T Test", choices = 'test')),
       
-      selectInput("t3", label = "Choose Second variable for T Test", choices = 'test'),
+      column(2,selectInput("t3", label = "Choose Second variable for T Test", choices = 'test'))),
       tableOutput('text')
  
     )
