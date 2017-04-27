@@ -102,10 +102,10 @@ server = function(input,output,session){
   
   #Generates random numbers with individual and treatment effects
   set.seed(12345)
-  t <- data.frame('a' = c('Certainty','Uncertainty','Ambiguity'), 'v' = c(rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1)))
-  m<- data.frame('a' = c('ENRE', 'BIO', 'NRS', 'MAF', 'Other'), 'v' = c(rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1)))
-  r<- data.frame('a' = c('Round One', 'Round Two', 'Round Three'), 'v' = c(rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1)))
-  g<- data.frame('a' = c('Male','Female'), 'v' = c(rnorm(1, mean = .75, sd = .1),rnorm(1, mean = .75, sd = .1)))
+  t <- data.frame('a' = c('Certainty','Uncertainty','Ambiguity'), 'v' = rnorm(3, mean = .75, sd = .1))
+  m<- data.frame('a' = c('ENRE', 'BIO', 'NRS', 'MAF', 'Other'), 'v' = rnorm(5, mean = .75, sd = .1))
+  r<- data.frame('a' = c('Round One', 'Round Two', 'Round Three'), 'v' = rnorm(3, mean = .75, sd = .1))
+  g<- data.frame('a' = c('Male','Female'), 'v' = rnorm(2, mean = .75, sd = .1))
   
   df <- data.frame('Treatment' = character(1000), 'Round' = character(1000), 'Gender' = character(1000), 'Major' = character(1000), 'efficiency' = integer(1000))
   t %>% mutate_if(is.factor, as.character) -> t
