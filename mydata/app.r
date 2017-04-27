@@ -42,18 +42,61 @@ ui =fluidPage(
                                                       'Round',
                                                       'Treatment',
                                                       'Major'),
-                  selected = 'Round') 
+                  selected = 'Round'),
+      selectInput("t1", label = "Choose Category for T Test", choices = c('Gender',
+                                                            'Round',
+                                                            'Treatment',
+                                                            'Major'),
+                  selected = 'Treatment'),
+      selectInput("t2", label = "Choose First variable for T Test", choices = 'test'),
+                  
+      selectInput("t3", label = "Choose Second variable for T Test", choices = 'test')
+                  
+      
     ),
     mainPanel(
-      plotOutput('plot')
+      plotOutput('plot'),
+      tableOutput('text')
  
     )
   
 )),
 
 #Takes two of the users selection, xvar and fvar, and plots as grouped bar graph where the x value is xvar and the group/fill is fvar
-server = function(input,output){
+server = function(input,output,session){
   data<-read.csv('mydata.csv', header=TRUE)
+  
+  #Observes for t test variables
+
+  observe({
+    if (input$t1 == 'Treatment'){
+    updateSelectInput(session, "t2",
+                      choices = c("Certainty", "Uncertainty", "Ambiguity"))
+      updateSelectInput(session, "t3",
+                        choices = c("Certainty", "Uncertainty", "Ambiguity"))
+      }
+    if (input$t1 == 'Major'){
+      updateSelectInput(session, "t2",
+                        choices = c("NRS", "BIO", "MAF",'ENRE','Other'))
+      updateSelectInput(session, "t3",
+                        choices = c("NRS", "BIO", "MAF",'ENRE','Other'))
+    }
+    if (input$t1 == 'Gender'){
+      updateSelectInput(session, "t2",
+                        choices = c("Male", "Female"))
+      updateSelectInput(session, "t3",
+                        choices = c("Male", "Female"))
+    }
+    if (input$t1 == 'Round'){
+      updateSelectInput(session, "t2",
+                        choices = c("Round One", "Round Two", 'Round Three'))
+      updateSelectInput(session, "t3",
+                        choices = c("Round One", "Round Two", 'Round Three'))
+    }
+
+    
+  })
+  
   
   #Generates random numbers with individual and treatment effects
   set.seed(12345)
@@ -95,6 +138,18 @@ output$plot <- renderPlot({
      labs(y = 'Bargain Efficiency') +
      theme(axis.text=element_text(size=14), axis.title=element_text(size=16,face="bold"), legend.text=element_text(size=14), legend.title = element_blank())
  print(p) 
+})
+
+output$text<-renderTable({
+  t1<-input$t1
+  t2<-input$t2
+  t3<-input$t3
+  
+  
+  tt<-t.test(subset(df,df[[t1]]==t2)$efficiency,subset(df,df[[t1]]==t3)$efficiency)
+  
+  op<-data.frame('T-stat'=tt[[1]], 'Degrees of Freedom' = tt[[2]], 'P-Value' = tt[[3]])
+  
 })
 }
 )
