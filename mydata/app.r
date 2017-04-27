@@ -146,12 +146,14 @@ output$text<-renderTable({
   t1<-input$t1
   t2<-input$t2
   t3<-input$t3
-  
-  
+  if(t2==t3){
+    op<-data.frame('T-stat'= '', 'Degrees of Freedom' = 'Needs two different variables', 'P-Value' = '')
+  }
+  else{
   tt<-t.test(subset(df,df[[t1]]==t2)$efficiency,subset(df,df[[t1]]==t3)$efficiency)
   
   op<-data.frame('T-stat'=tt[[1]], 'Degrees of Freedom' = tt[[2]], 'P-Value' = tt[[3]])
-  
+  }
 })
 }
 )
