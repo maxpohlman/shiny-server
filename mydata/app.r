@@ -126,7 +126,8 @@ shinyApp(
     r<- data.frame('a' = c('Round One', 'Round Two', 'Round Three'), 'v' = rnorm(3, mean = .75, sd = .1))
     g<- data.frame('a' = c('Male','Female'), 'v' = rnorm(2, mean = .75, sd = .1))
     
-    df <- data.frame('Treatment' = character(1000), 'Round' = character(1000), 'Gender' = character(1000), 'Major' = character(1000), 'efficiency' = integer(1000))
+    df <- data.frame('Treatment' = character(1000), 'Round' = character(1000), 'Gender' = character(1000), 
+                     'Major' = character(1000), 'efficiency' = integer(1000))
     t %>% mutate_if(is.factor, as.character) -> t
     m %>% mutate_if(is.factor, as.character) -> m
     g %>% mutate_if(is.factor, as.character) -> g
