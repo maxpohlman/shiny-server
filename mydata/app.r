@@ -9,7 +9,7 @@ ui =fluidPage(
   sidebarLayout(
     sidebarPanel(
       p("This is a work in progress using monte-carlo simulated data. Check back in the coming months as I will be adding
-        more graphing options, statistical results, and impliment the completed dataset", style =  "font-si20pt"),
+        more graphing options, statistical results, and implement the completed dataset", style =  "font-si20pt"),
       
       checkboxGroupInput("Treatment", 
                   label = "Select treatments to display",
