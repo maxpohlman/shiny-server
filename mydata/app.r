@@ -159,13 +159,13 @@ shinyApp(
       p<-plottable %>%
         group_by(x, f) %>% #groups by the two vars selected
         summarize(tm = mean(y),see=sd(y)) %>% #calculates mean and sd
-        mutate(se = see/sqrt(length(see))) %>% #converts to standard error
+        mutate(se = see/sqrt(length(plottable$x))) %>% #converts to standard error
         mutate(ci = se*1.96) %>%               #converts to confidence intervals
         ggplot(aes(x = x, y =tm)) +
         geom_bar(aes(fill = as.factor(f)), position = "dodge", stat="identity") + 
-        geom_errorbar(aes(ymin=tm-se, ymax=tm+se, group=f),
+        geom_errorbar(aes(ymin=tm-ci, ymax=tm+ci, group=f),
                       width=.2, position=position_dodge(.9)) +
-        geom_text(aes(x, y=tm-se,label=round(tm*100,2), group=f), position = position_dodge(width = .9), size = 8, vjust = 1.5) +
+        geom_text(aes(x, y=tm-ci,label=round(tm*100,2), group=f), position = position_dodge(width = .9), size = 8, vjust = 1.5) +
         labs(y = 'Bargain Efficiency') +
         theme(axis.text=element_text(size=14), axis.title=element_text(size=16,face="bold"), legend.text=element_text(size=14), legend.title = element_blank())
       print(p) 
@@ -195,3 +195,4 @@ shinyApp(
     
   }
   )
+#box/violin/density curve
