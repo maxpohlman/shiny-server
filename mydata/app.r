@@ -1,8 +1,8 @@
-
+library(shinythemes)
 library(shiny)
 library(dplyr)
 library(ggplot2)
-library(shinythemes)
+
 shinyApp(
   ui =navbarPage( "Max's Data", theme = shinytheme("cerulean"),
                   tabPanel("Analysis",
@@ -68,7 +68,7 @@ shinyApp(
                            )),
                   
                   #Adds second and third tabs, as well as table area in tab 2
-                  tabPanel(HTML("Dataset</a></li><li><a href=\"http://maxpohlman.com\">Back to my website"),
+                  tabPanel(HTML("Dataset</a></li><li><a href=\"http://maxpohlman.com\">Back to my website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/mydata/app.r\">View source code"),
                            
                            mainPanel(
                              tableOutput('tabo')
@@ -77,7 +77,8 @@ shinyApp(
                            
                            
                            
-                  )),
+                  )
+                  ),
   
   server = function(input,output,session){
     data<-read.csv('mydata.csv', header=TRUE) #Not used at the moment
