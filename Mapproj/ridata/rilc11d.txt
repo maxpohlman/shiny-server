@@ -1,0 +1,550 @@
+Identification_Information:
+  Citation:
+    Citation_Information:
+      Originator: Photo Science Inc., Rhode Island Department of Environmental Management, Rhode Island Statewide Planning Program
+      Publication_Date: 20140327
+      Title: Rhode Island Land Cover and Land Use 2011; rilc11d
+      Edition: 2011
+      Geospatial_Data_Presentation_Form: vector digital data
+      Publication_Information:
+        Publication_Place: Providence, Rhode Island
+        Publisher: Rhode Island Department of Environmental Management
+      Other_Citation_Details: Suggested bibliographic reference: RIGIS, 2015. Rhode Island Land Cover and Land Use 2011; rilc11d. Rhode Island Geographic Information System (RIGIS) Data Distribution System, URL: http://www.rigis.org, Environmental Data Center, University of Rhode Island, Kingston, Rhode Island (last date accessed: 8 April 2015).
+      Online_Linkage: http://www.rigis.org
+      Larger_Work_Citation:
+        Citation_Information:
+          Originator: Rhode Island Geographic Information System (RIGIS) Data Distribution System
+          Publication_Date: 1993
+          Title: Rhode Island Geographic Information System (RIGIS)
+          Online_Linkage: http://www.rigis.org
+  Description:
+    Abstract: This is a statewide, seamless digital dataset of the land cover/land use for the State of Rhode Island derived using automated and semi-automated methods and is based on orthophotography captured in spring 2011. The project area encompasses the State of Rhode Island and also extends 1/2 mile into the neighboring states of Connecticut and Massachusetts, or to the limits of the source orthophotgraphy. Geographic feature accuracy meets the National Mapping Standards for 1:5000 scale mapping with respect to base level data (roads, hydrography, and orthos). The minimum mapping unit for this dataset is 0.5 acre. The land use classification scheme used for these data was based on the same Anderson Level III modified coding schema used in previous land use datasets in Rhode Island (1988 & 2003/2004).
+    Purpose: To provide a statewide dataset representing land cover/land use. The dataset is also intended to be incorporated into the Rhode Island Geographic Information System database for use by federal, state and local government and made available to the general public.
+    Supplemental_Information: The intention of this dataset is to serve as an update to the 2003/2004 land cover/land use dataset. Geography for the dataset was based on ground conditions of 2011 four-band orthophotography with a spatial resolution of 0.5 ft and 2011 LiDAR data and data derivatives with a nominal post spacing of 1m. Additional ancillary data used in the production of this dataset were provided by the State of Rhode Island and included 2003/2004 land cover/land use, road centerline, hydrography, railroads, state boundary, municipal boundary, coastline, location of schools, hospitals, governmental facilities, waste disposal sites, etc. Landuse / Landcover for RI is based upon Anderson Level 3 coding described in the United States Geological Survey Publication: "A Land Use And Land Cover Classification System for Use With Remote Sensor Data, Geological Survey Professional Paper 964" Available Online at: <http://landcover.usgs.gov/pdf/anderson.pdf>
+  Time_Period_of_Content:
+    Time_Period_Information:
+      Range_of_Dates/Times:
+        Beginning_Date: 20110429
+        Ending_Date: 20110502
+    Currentness_Reference: ground condition
+  Status:
+    Progress: Complete
+    Maintenance_and_Update_Frequency: None planned
+  Spatial_Domain:
+    Bounding_Coordinates:
+      West_Bounding_Coordinate: -71.903750
+      East_Bounding_Coordinate: -71.108006
+      North_Bounding_Coordinate: 42.026046
+      South_Bounding_Coordinate: 41.145903
+  Keywords:
+    Theme:
+      Theme_Keyword_Thesaurus: ISO 19115 Topic Category
+      Theme_Keyword: planningCadastre
+      Theme_Keyword: environment
+    Theme:
+      Theme_Keyword_Thesaurus: None
+      Theme_Keyword: Anderson Classification
+      Theme_Keyword: Land Use
+      Theme_Keyword: Land Cover
+    Place:
+      Place_Keyword_Thesaurus: None
+      Place_Keyword: Rhode Island
+      Place_Keyword: Northeast
+      Place_Keyword: US
+      Place_Keyword: New England
+  Access_Constraints: None.
+  Use_Constraints:
+    This dataset is provided 'as is.’ The producer(s) of this dataset, contributors to this dataset, the Rhode Island Geographic Information System (RIGIS) consortium, the State of Rhode Island, and the University of Rhode Island do not make any warranties of any kind for this dataset, and are not liable for any loss or damage however and whenever caused by any use of this dataset. Please acknowledge both RIGIS and the primary producer(s) of this dataset in any derived products. Versions of the RIGIS logo suitable for both printed and web-based products are available at http://www.rigis.org/logos.
+    Please consider the source, spatial accuracy, attribute accuracy, currentness, and scale of these data before incorporating them into your project. These data were derived from automated and photo interpreted processes and should be used for preliminary planning purposes only. The wetland areas contained in this data set do not include all wetlands previously identified in other RIGIS land cover/land use data sets or in other separate GIS wetlands data sets and interpretation of wetlands areas should lean toward the side of caution. Wetlands areas previously classified as forested wetlands are shown as forested areas in this data set. Statistical comparisons with RIGIS land cover/land use data prior to 2003 should be treated with caution since significant differences in the methodologies used to delineate features were employed. If data are used for change detection using the 2003/2004 edition be aware that marinas were coded from other transportation and developed recreation to commercial in the 2011 data to more accurately fit the classification system.
+  Point_of_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Rhode Island Department of Environmental Management
+        Contact_Person: Paul Jordan
+      Contact_Position: Supervising GIS Specialist
+      Contact_Address:
+        Address_Type: mailing and physical
+        Address: 235 Promenade Street
+        City: Providence
+        State_or_Province: RI
+        Postal_Code: 02908
+        Country: US
+      Contact_Voice_Telephone: (401)222-2776 x4315
+      Contact_Electronic_Mail_Address: paul.jordan@dem.ri.gov
+      Contact_Instructions: email is preferred
+  Data_Set_Credit: Photo Science Inc, Rhode Island Department of Environmental Management, Rhode Island Statewide Planning Program
+Data_Quality_Information:
+  Attribute_Accuracy:
+    Attribute_Accuracy_Report: No formal attribute accuracy assessment was conducted on these data. The data went through multiple levels of QC (by the internal production unit at Photo Science Inc. and by the State of Rhode Island). Therefore the data are deemed to be fairly accurate. However, attribute accuracy is limited by the fact that decisions on use of land were based primarily on the interpretation of aerial imagery which can be sometimes restrictive in distinguishing between commercial and mutli-family housing, commercial and industrial and mixed use in single structure. Where project team had local knowledge of an area, better classification was achieved. Furthermore, only actual changes on the ground between 2003/04 and 2011 were mapped. Errors that existed in 2003/04 were carried through to 2011. Mapping only changes and not corrected errors was done so that change statistics will more accurately reflect actual changes.
+  Logical_Consistency_Report: Delivered as a topologically complete ESRI Geodatabase
+  Completeness_Report: Data exists for all areas within the project extent. Due to shifting unconsolidated material along the shoreline caused by tidal influcences additional land cover features were mapped that were outside the 2003/2004 mapping boundary.
+  Positional_Accuracy:
+    Horizontal_Positional_Accuracy:
+      Horizontal_Positional_Accuracy_Report: No formal horizonal accuracy assessment was conducted. However, the data were based on imagery with a 6 inch Ground Sample Distance (GSD) digital ortho imagery which was compiled to meet a 0.76 meter (2.5') horizontal accuracy at 95% confidence level (0.44-meters Root Mean Squared (RMSE) Error XY (0.31 meter RMSE X or Y)) based on NSSDA testing guidelines. This accuracy requirement is not applicable in areas where the ground is obscured on the aerial imagery by foliage, prevalent smoke, or dense shadow.
+    Vertical_Positional_Accuracy:
+      Vertical_Positional_Accuracy_Report: There is no vertical component for the data.
+  Lineage:
+    Process_Step:
+      Process_Description: Task Overview: Photo Science updated the Rhode Island land use and land cover data layer through semi-automated methods similar to that developed for the 2003/04 land use data layer and as accepted by RI Statewide Planning/RI GIS. Update methods used Rhode Island spring 2011, 4-band, 6-inch pixel orthophotography. The State of Rhode Island determined that only real changes between the 2003/2004 and 2011 imagery should be mapped. Errors in the data set were not corrected (unless they were directly associated with a real change) as this would skew change analysis. Any refinement of the non-urban lands is covered with the RI Ecological Communities mapping effort. The minimum mapping unit used for this data layer was 0.5 acres. Some smaller features were left like delineated water bodies from the RI hydrology layer (1:5,000 data layer), and variations in the coast line. The land use classification follows a 2003 modified version of the Anderson Level III coding schema as supplied by the Rhode Island DEM. A full breakdown of the classification scheme is provided in the classification scheme section. Task Steps: Step 1: Label Impervious. This step involved the labeling of the cleaned up impervious data set. Before labeling, the road centerlines were buffered by 20' resulting in an overall 40 foot width and used to mask out any underlying impervious to separate impervious features to the left and right of road networks. Labels were then applied to the impervious data set from either the RIGIS 2003/04 land use data, E911 points or external property database in a conditional modeling process. Previously a semi-automated process was used to clean labels where misalignment occurred between the two data sets using standard processing tools in ArcGIS such as Eliminate, however, misalignment was minimal between the 2003 and 2011 imagery. There was manual review and labeling of land use changes where no other reliable data was found. The labeled impervious features did not contain any roads data for roads less than 200 feet in width, (with the exception of major limited access highways (interstates) and as identified in previous RIGIS LCLU data set. Step2: Buffering Labeled Impervious Data. This step entailed the buffering of labeled impervious data to produce the preliminary boundaries of the land uses for urban classes. Before buffering, free standing impervious clumps of less than 200 sq. feet were removed in order to remove sheds, detached garages or small structures at the end of people's property. The labeled impervious data are buffered based on the assigned LC/LU code using the rules described in Table 1. Table 1: Buffer Rules for Primary Buffer Land Use Buffer Distance Rules Residential (111, 112, 113) 30 feet. All subtypes of residential are equal - e.g. when buffers of medium density and low density overlap, they divide in the center. Residential buffers override developed recreation and transitional areas. Residential buffers are trumped by all other urban class buffers. Residential (114, 115) 60 feet Commercial (120) 10 feet Commercial is same priority as industrial, commercial/residential mix, commercial/industrial mix and cemeteries and when the buffers for these classes overlap, they divide in the center. Commercial buffers override all other urban class buffers. Industrial (130) 10 feet Industrial is same priority as commercial, commercial/residential mix, commercial/industrial mix and cemeteries and when the buffers for these classes overlap, they divide in the center. Industrial buffers override all other urban class buffers. Roads (141) 20 feet Road priority is same as railroads, power lines and other transportation and when the buffers for these classes overlap, they divide in the middle. Roads buffers are trumped by commercial, industrial, commercial/residential and commercial/industrial. Road buffers override all other urban class buffers. Airports (142) 50 feet Airports are trumped by commercial, industrial, commercial/residential, commercial/industrial, roads, railroads, power lines and other transportation. Airport buffers override all other classes. Railroads (143) 20 feet Railroad priority is same as roads, power lines and other transportation and when the buffers for these classes overlap, they divide in the middle. Railroad buffers are trumped by commercial, industrial, commercial/residential and commercial/industrial. Railroad buffers override all other urban class buffers. Water and Sewage Treatment (144) 50 feet Water and sewage treatment is same priority as waste disposal, and when the buffers for these classes overlap, they divide in the center. Water and sewage treatment buffers override mines, quarries and gravel pits, residential, developed recreation, vacant land and transitional areas. Water and sewage treatment buffers are trumped by all other urban class buffers. Waste Disposal (145) 50 feet Waste disposal is same priority as water treatment, and when the buffers for these classes overlap, they divide in the center. Waste disposal buffers override mines, quarries and gravel pits, residential, developed recreation and transitional areas. Waste disposal buffers are trumped by all other urban class buffers. Power Lines (146) 20 feet Power line priority is same as roads, railroads and other transportation and when the buffers for these classes overlap, they divide in the middle. Power line buffers are trumped by commercial, industrial, commercial/residential and commercial/industrial. Power line buffers override all other urban class buffers. Other Transportation (147) 20 feet Other transportation priority is same as roads, power lines and railroad and when the buffers for these classes overlap, they divide in the middle. Other transportation buffers are trumped by commercial, industrial, commercial/residential and commercial/industrial. Other transportation buffers override all other urban class buffers. Commercial/Residential Mix (151) 10 feet Commercial/residential mix is same priority as industrial, commercial, commercial/industrial mix and cemeteries and when the buffers for these classes overlap, they divide in the center. Commercial/residential buffers override all other urban class buffers. Commercial/Industrial Mix (152) 10 feet Commercial/industrial mix is same priority as industrial, commercial, commercial/residential mix and cemeteries and when the buffers for these classes overlap, they divide in the center. Commercial/industrial buffers override all other urban class buffers. Developed Recreation (161) 60 feet Developed recreation buffers override transitional areas. Developed recreation buffers are equal in priority to vacant land. The buffers are trumped by all other urban class buffers. Vacant Land (162) 60 feet Vacant land buffers override transitional areas. Vacant Land buffers are equal in priority to developed recreation. The buffers are trumped by all other urban class buffers. Cemeteries (163) 10 feet Cemetery buffers override water and sewage treatment, waste disposal, mines, quarries and gravel pits, residential, developed recreation, vacant land and transitional areas. Cemetery buffers are trumped by all other urban class buffers. Institutional (170) 15 feet Institutional buffers override residential, cemeteries, mines, quarries and gravel pits, water and sewage treatment, waste disposal, developed recreation and vacant land. Institutional buffers are trumped by all other urban class buffers. Waste Disposal (145) 50 feet Waste disposal trumps developed recreation and vacant land. Waste disposal is same priority as 'mines, quarries, gravel pits' and when buffers for these classes overlap, they divide in the center. Mines, Quarries and Gravel Pits (740) 50 feet Mines, Quarries and Gravel Pit buffers trump residential, developed recreation, vacant land and transitional areas. Mines, Quarries and Gravel Pit buffers are trumped by all other urban class buffers. Transitional Areas (750) 100 feet Transitional area buffers are trumped by all urban class buffers. Step 3: Create Pervious Classification The 2011 LiDAR was preprocessed to create a digital surface model (DSM). This was combined with the 2011 imagery and segmented and classified with Trimbleâs eCognition software. A process tree model was created that identified potential changes to the vegetation. Features below the Â½ acre minimum mapping unit were intelligently dissolved into the surrounding features. Step 4: Label Pervious Data This step entailed the labeling of the pervious classification from Step 3. This was done by combining the pervious classification with the 2003/04 land cover dataset and pulling in information from the LiDAR data derivatives and imagery- for example, where the pervious classification was forest but has a height less than 1 ft. in 2011 and a vegetated signature it was labeled as grass. Where illogical label combinations occur, the pervious data were labeled with a flagged value of 900 for manual review. Step 5: Secondary Buffer Through this step, the buffered labeled impervious and the labeled pervious data were combined through a secondary buffer. The purpose of this buffer was to incorporate natural classes into urban class delineations where appropriate, for example lawns in residential. The secondary buffer only allowed urban land use of specific classes to grow into pervious regions of specific classes (i.e. non-forested, non-water). The buffers were set to grow at specific distances beyond the edge of buffer 1. The buffer distances and class hierarchy were specified within an automated model. Road centerlines were buffered 2' and coded as 999 in order to provide a limit to prevent land use classes from expanding across roads. Table 2 includes the rules used for the secondary buffer. Table 2: Buffer Rules for Secondary Buffer Land Use Buffer Distance Rules Residential (111 &112) 100 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. The buffer overrides water and sewage treatment, waste disposal, mines quarries and gravel pits. The buffers are trumped by all other secondary urban buffers. Residential (113, 114, 115) 150 feet Industrial (130) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. Industrial is equal in priority with commercial, commercial/residential mix, commercial/industrial mix. The buffer is trumped by roads, railroads, power lines and other transportation. The buffer overrides all other urban class buffers. Roads (141) 0 feet Roads are not expanded with a second buffer. Roads are not affected by secondary buffers of other classes. Airports (142) 100 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. The buffer is trumped by roads, railroads, power lines, other transportation, developed recreation, transitional areas, commercial, industrial, commercial/industrial, commercial/residential and institutional. The buffer overrides all other urban class buffers. Railroads (143) 0 feet Railroads are not expanded with a second buffer. Railroads are not affected by secondary buffers of other classes. Water and Sewage Treatment (144) 50 feet Water and sewage treatment is equal in priority to waste disposal. The buffer expands into non-woody and barren. The buffer does not extend over water and forests. The buffer trumps mines quarries and gravel pits, and developed recreation. The buffer is trumped by all other urban class buffers. Waste Disposal (145) 100 feet Waste disposal is equal in priority to water and sewage treatment. The buffer expands into non-woody and barren. The buffer does not extend over water and forests. The buffer trumps mines quarries and gravel pits, and developed recreation. The buffer is trumped by all other urban class buffers. Power Lines (146) 0 feet Power lines are not expanded with a second buffer. Power lines are not affected by secondary buffers of other classes. Other Transportation (147) 30 feet Other transportation is equal in priority to roads, railroads and power lines. The buffer expands into non-woody and barren. The buffer does not extend over water and forests. The buffer overrides all other urban class buffers. Commercial/ Residential Mix (151) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. Commercial/residential mix is equal in priority with industrial, commercial, commercial/industrial mix. The buffer is trumped by roads, railroads, power lines and other transportation. The buffer overrides all other classes. Commercial/ Industrial Mix (152) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. Commercial/industrial mix is equal in priority with industrial, commercial, commercial/residential mix. The buffer is trumped by roads, railroads, power lines and other transportation. The buffer overrides all other classes. Developed Recreation (161) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. The buffer is trumped by roads, railroads, power lines and other transportation. The buffer overrides all other urban class buffers. Vacant Land (162) 50 feet All non-woody and barren gets labeled as vacant land if the underlying polygon from 95 land use is vacant land. Vacant land is trumped by all other secondary buffers. The buffer does not extend over water and forests. Cemeteries (163) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. The buffer trumps residential, water and sewage treatment, waste disposal, mines, quarries and gravel pits and vacant land. The buffer is trumped by all other urban class buffers. Institutional (170) 50 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests. The buffer overrides airports, cemeteries, residential, water and sewage treatment, waste disposal mines, quarries and gravel pits and vacant land. Mines, Quarries and Gravel Pits (740) 100 feet Buffer covers non-woody and barren. The buffer does not extend over water and forests but overrides vacant land. It is trumped by all other urban class buffers. Step 6: Clean Data This step entailed the generalization of data to remove sharp edge polygons, and polygons that fall below the minimum mapping unit, and incorporate the road centerlines. The generalization was done in the raster environment using a series of filters and smoothing algorithms and in the vector environment using several tools including Integrate, Update and Simplify. Although a Â½ acre MMU was used, certain urban land use polygons < Â½ acre were captured in order to keep all the urban polygons delineated as urban particularly in rural areas. Final review was performed manually where all the flagged values were assigned the correct land use codes; any misclassified polygons were correctly delineated. Step 7: Quality Control The data went through internal Quality Control and a detailed review by Rhode Island staff. All issues identified by either Photo Science Analysts or the Rhode Island team were rectified. Step 8: Seamless dataset creation and delivery with meta-data Once the data was approved it was combined into a single feature class and checked for seamlines.
+      Process_Date: 20130101
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: Photo Science Inc.
+            Contact_Person: Andrew Brenner
+          Contact_Position: Program Manager
+          Contact_Address:
+            Address_Type: mailing
+            Address: 315 West Huron, Suite 260
+            City: Ann Arbor
+            State_or_Province: MI
+            Postal_Code: 48103
+            Country: US
+          Contact_Voice_Telephone: 859-277-8700
+          Contact_Electronic_Mail_Address: abrenner@photoscience.com
+    Process_Step:
+      Process_Description:
+        Symbology was updated to the 2011 LULC dataset so that all symbols were unique and easy to find.  Major changes from the previous symbology included the following.
+        1)  Similar LU categories and codes are now organized together verses alphabetically
+        2)  Residential LU categories now have a range of yellows-orange-brown based on density
+        3)  Outlines are mainly around built areas and vary based on category
+        4)  Selected LULC codes have a dot or other fill type to help it stand out from similar colored surrounding categories
+      Process_Date: 20150327
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: Rhode Island Division of Planning
+            Contact_Person: Christina Delage Baza
+          Contact_Position: GIS Specialist II
+          Contact_Address:
+            Address_Type: mailing and physical
+            Address: One Capitol Hill
+            Address: Division of Planning - 3rd Floor
+            City: Providence
+            State_or_Province: RI
+            Postal_Code: 02908
+          Contact_Voice_Telephone: 401-222-6481
+          Contact_Facsimile_Telephone: 401-222-2083
+          Contact_Electronic_Mail_Address: Christina.Delagebaza@doa.ri.gov
+    Process_Step:
+      Process_Description: The drawing order/FID was also updated to the 2011 LULC dataset using the Data Management/Table 'Sort' tool based on the updated symbology Advanced View 'Symbol Level' settings.  This was done in order for features to have a desired drawing order.  For example a feature with a symbol outline will draw on top of features without an outline.
+      Process_Date: 20150327
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: Rhode Island Division of Planning
+            Contact_Person: Christina Delage Baza
+          Contact_Position: GIS Specialist II
+          Contact_Address:
+            Address_Type: mailing and physical
+            Address: One Capitol Hill
+            Address: Division of Planning - 3rd Floor
+            City: Providence
+            State_or_Province: RI
+            Postal_Code: 02908
+          Contact_Voice_Telephone: 401-222-6481
+          Contact_Facsimile_Telephone: 401-222-2083
+          Contact_Electronic_Mail_Address: Christina.Delagebaza@doa.ri.gov
+    Process_Step:
+      Process_Description: Data contributed to RIGIS by the Rhode Island Department of Environmental Management. Minor formatting and content updates made to metadata before publication to RIGIS.
+      Process_Date: 20150408
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: University of Rhode Island Environmental Data Center
+            Contact_Person: Erica Tefft
+          Contact_Position: Research Associate
+          Contact_Address:
+            Address_Type: mailing and physical
+            Address: 1 Greenhouse Road
+            City: Kingston
+            State_or_Province: RI
+            Postal_Code: 02881
+            Country: US
+          Contact_Voice_Telephone: 401-874-5054
+          Contact_Electronic_Mail_Address: erica@edc.uri.edu
+          Contact_Instructions: email preferred
+    Process_Step:
+      Process_Description:
+        Errors in land use attributes were discovered. To determine if more errors existed, a Union (Union tool, Analysis tools) was created between the most recent 2011 land use dataset (rilu11d) and the original 2011 land use dataset (rilu11). This was done so that it could be determined if the attribute error has always existed. 
+        Each Land Use code was reviewed to determine errors. All mis-labeled features were noted using their FID. Most errors were a discrepency between the land use code and the description (in most cases the description was correct and the three digit land use code was incorrect). These incorrect features were then compared again with the 2011 Rhode Island Aerial Photos to determine the proper land use code. Below, find a list of the FID and what change was made to that feature. 
+        FID = 33324; LU Code changed from 220 to 240
+        FID = 40359; LU Code changed from 120 to 130 
+        FID = 40353; LU Code changed from 120 to 130
+        FID = 40071; LU Code changed from 144 to 130
+        FID = 40633; LU description changed from Commercial to Institutional 
+        FID = 570; LU Code changed from 230 to 250
+        FID = 486; LU Code changed from 500 to 600
+        FID = 728; LU Code changed from 500 to 600
+      Source_Used_Citation_Abbreviation: rilu11.shp - original RI 2011 land use dataset from RIGIS data archive
+      Process_Date: 20150608
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: University of Rhode Island Environmental Data Center
+            Contact_Person: Erica Tefft
+          Contact_Position: Research Associate
+          Contact_Address:
+            Address_Type: mailing and physical
+            Address: 1 Greenhouse Road
+            City: Kingston
+            State_or_Province: RI
+            Postal_Code: 02881
+            Country: US
+          Contact_Voice_Telephone: 401-874-5054
+          Contact_Electronic_Mail_Address: erica@edc.uri.edu
+          Contact_Instructions: email preferred
+Spatial_Data_Organization_Information:
+  Direct_Spatial_Reference_Method: Vector
+  Point_and_Vector_Object_Information:
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: GT-polygon composed of chains
+      Point_and_Vector_Object_Count: 68186
+Spatial_Reference_Information:
+  Horizontal_Coordinate_System_Definition:
+    Planar:
+      Map_Projection:
+        Map_Projection_Name: NAD 1983 StatePlane Rhode Island FIPS 3800 Feet
+        Transverse_Mercator:
+          Scale_Factor_at_Central_Meridian: 0.99999375
+          Longitude_of_Central_Meridian: -71.5
+          Latitude_of_Projection_Origin: 41.08333333333334
+          False_Easting: 328083.3333333333
+          False_Northing: 0.0
+      Planar_Coordinate_Information:
+        Planar_Coordinate_Encoding_Method: coordinate pair
+        Coordinate_Representation:
+          Abscissa_Resolution: 0.000000007286382608384659
+          Ordinate_Resolution: 0.000000007286382608384659
+        Planar_Distance_Units: foot_us
+    Geodetic_Model:
+      Horizontal_Datum_Name: D North American 1983
+      Ellipsoid_Name: GRS 1980
+      Semi-major_Axis: 6378137.0
+      Denominator_of_Flattening_Ratio: 298.257222101
+Entity_and_Attribute_Information:
+  Detailed_Description:
+    Entity_Type:
+      Entity_Type_Label: Rhode Island Land Cover and Land Use 2011 - Modified; rilc11d
+      Entity_Type_Definition: State of Rhode Island land cover land use delineated by digital aerial imagery which was obtained between 4/29/2011 and 5/2/2011.
+      Entity_Type_Definition_Source: State of Rhode Island Department of Administration
+    Attribute:
+      Attribute_Label: FID
+      Attribute_Definition: Internal feature number.
+      Attribute_Definition_Source: Esri
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Sequential unique whole numbers that are automatically generated.
+    Attribute:
+      Attribute_Label: Shape
+      Attribute_Definition: Feature geometry.
+      Attribute_Definition_Source: Esri
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Coordinates defining the features.
+    Attribute:
+      Attribute_Label: STATE
+      Attribute_Definition: Abbreviation of the state in which the feature occurs.
+      Attribute_Definition_Source: State of Rhode Island Department of Administration
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: CT
+          Enumerated_Domain_Value_Definition: The State of Connecticut.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: RI
+          Enumerated_Domain_Value_Definition: The State of Rhode Island
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: MA
+          Enumerated_Domain_Value_Definition: The State of Massachusettes
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+    Attribute:
+      Attribute_Label: LULC_2011
+      Attribute_Definition: Land Use Code
+      Attribute_Definition_Source: State of Rhode Island Department of Administration
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 111
+          Enumerated_Domain_Value_Definition:
+            High Density Residential (1/8 acre lots; 8 houses per acre)
+            All residential categories are based on the size of the maintained lot and includes the house and the yard area. Lot sizes are visually determined by comparing the houses in an area to the surrounding houses, observing the spacing between the houses and the relative amount of yard space between them. Other land cover types (such as forest, wetland or water bodies), even though they may be on a residential property, are mapped separately if they exceed the minimum mapping unit. Duplexes (usually with 2 front doors/pathways and sometimes 2 driveways) will be factored into this calculation while multi-unit complexes will generally be classified as high density residential unless surrounded by a significant amount of maintained yard (such as some condos), in which case it may calculate out to a lower density category. Building sizes of residences (except for some duplexes and multi-unit complexes) are significantly smaller than almost all commercial and industrial buildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 112
+          Enumerated_Domain_Value_Definition:
+            Medium High Density Residential (1/4 to 1/8 acre lots; 4 - 8 houses per acre))
+            All residential categories are based on the size of the maintained lot and includes the house and the yard area. Lot sizes are visually determined by comparing the houses in an area to the surrounding houses, observing the spacing between the houses and the relative amount of yard space between them. Other land cover types (such as forest, wetland or water bodies), even though they may be on a residential property, are mapped separately if they exceed the minimum mapping unit. Duplexes (usually with 2 front doors/pathways and sometimes 2 driveways) will be factored into this calculation while multi-unit complexes will generally be classified as high density residential unless surrounded by a significant amount of maintained yard (such as some condos), in which case it may calculate out to a lower density category. Building sizes of residences (except for some duplexes and multi-unit complexes) are significantly smaller than almost all commercial and industrial buildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 113
+          Enumerated_Domain_Value_Definition:
+            Medium Density Residential (1 to 1/4 acre lots; 1 - 4 houses per acre)
+            All residential categories are based on the size of the maintained lot and includes the house and the yard area. Lot sizes are visually determined by comparing the houses in an area to the surrounding houses, observing the spacing between the houses and the relative amount of yard space between them. Other land cover types (such as forest, wetland or water bodies), even though they may be on a residential property, are mapped separately if they exceed the minimum mapping unit. Duplexes (usually with 2 front doors/pathways and sometimes 2 driveways) will be factored into this calculation while multi-unit complexes will generally be classified as high density residential unless surrounded by a significant amount of maintained yard (such as some condos), in which case it may calculate out to a lower density category. Building sizes of residences (except for some duplexes and multi-unit complexes) are significantly smaller than almost all commercial and industrial buildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 114
+          Enumerated_Domain_Value_Definition:
+            Medium Low Density Residential (1 to 2 acre lots; 1 house per 1 to 2 acre)
+            All residential categories are based on the size of the maintained lot and includes the house and the yard area. Lot sizes are visually determined by comparing the houses in an area to the surrounding houses, observing the spacing between the houses and the relative amount of yard space between them. Other land cover types (such as forest, wetland or water bodies), even though they may be on a residential property, are mapped separately if they exceed the minimum mapping unit. Duplexes (usually with 2 front doors/pathways and sometimes 2 driveways) will be factored into this calculation while multi-unit complexes will generally be classified as high density residential unless surrounded by a significant amount of maintained yard (such as some condos), in which case it may calculate out to a lower density category. Building sizes of residences (except for some duplexes and multi-unit complexes) are significantly smaller than almost all commercial and industrial buildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 115
+          Enumerated_Domain_Value_Definition:
+            Low Density Residential (>2 acre lots)
+            All residential categories are based on the size of the maintained lot and includes the house and the yard area. Lot sizes are visually determined by comparing the houses in an area to the surrounding houses, observing the spacing between the houses and the relative amount of yard space between them. Other land cover types (such as forest, wetland or water bodies), even though they may be on a residential property, are mapped separately if they exceed the minimum mapping unit. Duplexes (usually with 2 front doors/pathways and sometimes 2 driveways) will be factored into this calculation while multi-unit complexes will generally be classified as high density residential unless surrounded by a significant amount of maintained yard (such as some condos), in which case it may calculate out to a lower density category. Building sizes of residences (except for some duplexes and multi-unit complexes) are significantly smaller than almost all commercial and industrial buildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 120
+          Enumerated_Domain_Value_Definition:
+            Commercial (sale of products and services)
+            Large commercial facilities (such as malls, shopping centers and larger strip commercial areas) are typically well landscaped with parking strategically arranged around the building in multiple areas. There are often a few loading docks. These land uses are usually found in residential areas or grouped with other commercial facilities. Parking areas are included. Smaller commercial facilities (such as neighborhood stores or smaller strip commercial areas) often look similar to residential areas but are sometimes distinguishable by their larger parking areas (compared to residential parking) often behind the building down a driveway with spaces for 5 or 10 vehicles or if in a dense residential area, they may actually be commercial at the ground level and apartments above. Without any of these distinguishing features, these will probably be classified as residential. Also included in this category are office parks, medical offices and lawn and garden centers that do not produce or grow the product (not part of nurseries). Commercial buildings are almost always larger than residential structures.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 130
+          Enumerated_Domain_Value_Definition:
+            Industrial (manufacturing, design, assembly, etc.)
+            Industrial areas are typically not landscaped as thoroughly as a commercial facility. Parking is often in one large lot. These areas generally have many loading docks and there are often truck trailers parked on-site. These facilities are often far from residential areas, often surrounded by forests, but typically near major roads or highways. Parking areas are included. Industrial buildings are almost always larger than residential structures.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 141
+          Enumerated_Domain_Value_Definition:
+            Roads (divided highways >200' plus related facilities)
+            Related facilities would include rest areas, highway maintenance areas, storage areas, on/off ramps, and maintained grassy areas adjacent to the roadway. Also included is the grass or wooded median strip between the roads. Roads less than 200 feet in width that are the center of two differing land use classes will have the land use classes meet at the center line of the road. Bridges that are greater than 200 feet wide will be included in this category.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 142
+          Enumerated_Domain_Value_Definition:
+            Airports (and associated facilities)
+            Airport facilities include runways, maintained grassy areas adjacent to runways, hangars, terminals, freight storage areas and buildings, roads, short and long term parking lots, observation towers and on-site commercial facilities. Abandoned airports should be classified as another use such as Vacant Land (162) or Transitional Land (750) depending on its current use.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 143
+          Enumerated_Domain_Value_Definition:
+            Railroads (and associated facilities)
+            Railroad facilities include all tracks, maintained rights-of-way adjacent to the tracks, terminals, stations, switching yards, storage facilities and buildings, and parking lots around the station.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 144
+          Enumerated_Domain_Value_Definition:
+            Water and Sewage Treatment
+            Water and sewage treatment facilities are typically characterized by circular sedimentation and aeration tanks, associated facilities include pump houses, filtration and aeration buildings, as well as parking lots.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 145
+          Enumerated_Domain_Value_Definition: Waste Disposal (landfills, junkyards, etc.)
+          Enumerated_Domain_Value_Definition_Source:
+            State of Rhode Island Department of Administration
+            Landfills often can be mistaken for sand and gravel pits (740) but do not have the "spider" shaped sorting/conveyor apparatus associated with sand and gravel operations. There is usually an area of recent activity with disturbed earth and piles of material (waste and cover material) nearby. There will often be large areas that haven't been disturbed for a while. Associated facilities for landfills, junkyards, and automobile dumps include all buildings, roads and parking areas. There are usually construction machines (such as front bucket loaders, road graders, bulldozers and dump trucks) on site. Once landfills are closed, they are covered, graded and often times venting pipes for methane gas can be seen arranged systematically throughout the landfill. There will generally be a high point in the middle of the landfill with moderate slopes out to the edges. Some capped landfills may have been converted to another use, such as Developed Recreation (161).
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 146
+          Enumerated_Domain_Value_Definition: Power Lines (>100' wide)
+          Enumerated_Domain_Value_Definition_Source:
+            State of Rhode Island Department of Administration
+            Power lines generally follow straight lines across the landscape. Usually, the support towers are visible at a set interval and often, wires can be seen on an aerial photograph between the towers. Also included in this category are underground pipeline corridors. In both cases, the feature is mapped to the edge of the maintained vegetation. Where power lines or utility corridors pass over or through other land use categories, the other category takes precedence unless the area is managed specifically for the power line (such as forest).
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 147
+          Enumerated_Domain_Value_Definition:
+            Other Transportation (terminals, docks, etc.)
+            This category is used for land-based truck terminals and warehouses (with many loading docks) as well as water-based docks and associated buildings used for industrial or commercial purposes not associated with other categories (such as recreation docks used at marinas), but includes commercial fishery facilities. Adjacent parking areas and storage facilities are included. This category takes precedence over Industrial (130) if the primary use is to transport goods.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 151
+          Enumerated_Domain_Value_Definition:
+            Commercial/Residential Mixed
+            This category is used for land uses that are a mix of both commercial and residential. Although difficult to tell from aerial photographs, ancillary data may be provided to help classify areas into this type.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 152
+          Enumerated_Domain_Value_Definition:
+            Commercial/Industrial Mixed
+            Some facilities are not obviously commercial or industrial but a mix of the two. They are nicely landscaped yet have distinguishing characteristics of both commercial and industrial areas. Parking lots are included. Commerce Parks will fit into this category.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 161
+          Enumerated_Domain_Value_Definition:
+            Developed Recreation
+            Developed recreation facilities include stadiums, ball fields, tennis courts, urban parks, basketball courts, ski areas, golf courses, marinas, playgrounds, zoos, amusement parks, developed beach areas, drive-in theaters, fairgrounds, bike paths, race tracks and swimming pools plus associated parking lots. It does not include passive recreation areas such as state forests or parks, except for the developed facilities associated with these areas. These facilities, when associated with institutional land uses, will be pulled out into this category.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 162
+          Enumerated_Domain_Value_Definition:
+            Vacant Land
+            Land is classified as vacant if it is abandoned land that isn't being used for any other land use. It isn't being prepared for another use (see 750 Transitional Area below) and does not have enough tree growth to be classified as forest or enough vegetation to be classified as brushland (300). It may include structures and indicates that the land was previously used for one of the urban categories.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 163
+          Enumerated_Domain_Value_Definition:
+            Cemeteries
+            From small to large cemeteries, these features are obvious by the orderly grid of gravestones, monuments and road networks. Quite often, they are noted on USGS topographic maps. This category includes associated buildings, roads and parking areas.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 170
+          Enumerated_Domain_Value_Definition:
+            Institutional (schools, hospitals, churches, etc.)
+            Institutional land and buildings are public or quasi-public facilities with or without green space designed to serve large numbers of people such as schools, colleges, hospitals, prisons, churches, town halls, public works buildings, police stations or fire stations. The maintained areas around the facilities are included as are parking facilities. Some of the facilities at a large college, for example, may be pulled out into other categories (such as an athletic field - 161). However, all dormitories, family and faculty housing and other buildings are included in this category as are grassy areas that are on the property of the institution. These are usually noted on USGS topographic maps.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 210
+          Enumerated_Domain_Value_Definition:
+            Pasture (agricultural not suitable for tillage)
+            Pasture land is generally used for grazing of animals and for the growing of grasses for hay. It is often hilly, may have poor drainage or stoniness, and the field boundaries may be less defined than cropland. There may be scattered trees or shrubs in the field. Associated facilities include barns and other outbuildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 220
+          Enumerated_Domain_Value_Definition:
+            Cropland (tillable)
+            Cropland is generally tilled land used to grow row crops. There is usually evidence of intense land management. The land is often flat, well drained and the field boundaries are generally very well defined. This category also includes turf farms that grow sod. Associated facilities include barns and other outbuildings.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 230
+          Enumerated_Domain_Value_Definition:
+            Orchards, Groves, Nurseries
+            This category includes fruit orchards, greenhouses, plant nurseries, Christmas tree farms, vine crops (such as vineyards, strawberry and blueberry patches), and cranberry bogs (including sandy areas adjacent to the bogs that are used in the growing process). The orderly pattern of the vegetation generally indicates that one or more of these land uses is present. Associated facilities include barns, other outbuildings and parking lots. Orchards and greenhouses are often symbolized on USGS topographic maps. Commercial lawn and garden centers that do not produce or grow the product will be considered Commercial (120).
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 240
+          Enumerated_Domain_Value_Definition:
+            Confined Feeding Operations
+            Confined feeding operations are intensive facilities used for raising livestock or poultry in a small space where there are minimal adjacent grazing lands. This category includes the feeding areas, stables, barns, outbuildings and waste management facilities as well as equipment storage areas.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 250
+          Enumerated_Domain_Value_Definition:
+            Idle Agriculture (abandoned fields and orchards)
+            When pasture, cropland and other agricultural uses have not been active for a few years, it is classified as idle agriculture. Often, early successional vegetation is seen growing in around the edges and there is no evidence of any land or vegetation management. Eventually, it will become brushland (300).
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 300
+          Enumerated_Domain_Value_Definition:
+            Brushland (shrub and brush areas, reforestation)
+            Brushland is characterized by lots of shrubs and very few trees (< 50% canopy). It includes areas that are being reforested but the trees are not large or dense enough to be classified as forests. It also includes areas that are more permanently shrubby, such as heath areas, wild blueberries or mountain laurel.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 410
+          Enumerated_Domain_Value_Definition:
+            Deciduous Forest (>80% hardwood)
+            Trees are classified as forests when the tree canopy covers at least 50% of the space when viewed from above on an aerial photograph. The four different categories depend upon the composition of deciduous vs. coniferous trees. On an aerial photograph, most coniferous trees have conical shapes (except for pines) with dense needles and tight branching with dark spectral signatures whereas deciduous trees have a more open or freeform shape with leaves (during the growing season) that give the tree a coarser texture or pattern and a looser or more open branching arrangement. Deciduous spectral signatures are generally lighter than coniferous signatures.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 420
+          Enumerated_Domain_Value_Definition:
+            Softwood Forest (>80% softwood)
+            Trees are classified as forests when the tree canopy covers at least 50% of the space when viewed from above on an aerial photograph. The four different categories depend upon the composition of deciduous vs. coniferous trees. On an aerial photograph, most coniferous trees have conical shapes (except for pines) with dense needles and tight branching with dark spectral signatures whereas deciduous trees have a more open or freeform shape with leaves (during the growing season) that give the tree a coarser texture or pattern and a looser or more open branching arrangement. Deciduous spectral signatures are generally lighter than coniferous signatures.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 430
+          Enumerated_Domain_Value_Definition:
+            Mixed Forest
+            Trees are classified as forests when the tree canopy covers at least 50% of the space when viewed from above on an aerial photograph. The four different categories depend upon the composition of deciduous vs. coniferous trees. On an aerial photograph, most coniferous trees have conical shapes (except for pines) with dense needles and tight branching with dark spectral signatures whereas deciduous trees have a more open or freeform shape with leaves (during the growing season) that give the tree a coarser texture or pattern and a looser or more open branching arrangement. Deciduous spectral signatures are generally lighter than coniferous signatures.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 500
+          Enumerated_Domain_Value_Definition:
+            All Open Water Bodies
+            This category includes open water, such as lakes, ponds, lagoons, bays or rivers wide enough to be mapped as a polygon instead of a line. This includes any open water feature on the land side of the ocean coastline.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 600
+          Enumerated_Domain_Value_Definition:
+            Wetland
+            Visible grassy or vegetated areas often near or adjacent to open water bodies or streams and or visibly scoured areas that may be associated with tidal flow or flooding. Forested wetlands will be treated as Code 400 forest types. Dead forest wetlands will also be delineated as Code 400 forest types.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 710
+          Enumerated_Domain_Value_Definition:
+            Beaches
+            This category includes fresh and saltwater sandy beaches. If it is a highly developed beach facility with buildings and parking lots, it should be classified as Developed Recreation (161).
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 720
+          Enumerated_Domain_Value_Definition:
+            Sandy Areas (not beaches)
+            These are sandy areas that are not beaches, with very little visible vegetation. These are generally small patches of sand in shrub-scrub areas that indicate highly permeable soils with very little organic material.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 730
+          Enumerated_Domain_Value_Definition:
+            Rock Outcrops
+            These are areas of rock with very sparse visible vegetation, usually found in steep areas with a lot of topographic relief, usually cliffs.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 740
+          Enumerated_Domain_Value_Definition:
+            Mines, Quarries, and Gravel Pits.
+            Sand and gravel pits usually have a "spider" shaped sorting/conveyor apparatus. Mines and quarries usually have very steep sides where there is evidence of some sort of extraction activity. Associated facilities include all buildings, roads and parking areas. There are usually construction machines (such as front bucket loaders, bulldozers and dump trucks) on site. USGS topographic maps will usually mark these features with appropriate symbols.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 750
+          Enumerated_Domain_Value_Definition:
+            Transitional Areas (urban open)
+            Some areas are in the process of being developed from one land use to another. Since these are transitional lands, it is not always apparent what the new land use will be so they are classified as this category. Typically, these areas are being developed for residential, commercial or industrial use. Comparison to older imagery shows that if was previously another land use or land cover category.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+        Enumerated_Domain:
+          Enumerated_Domain_Value: 760
+          Enumerated_Domain_Value_Definition:
+            Mixed Barren Areas
+            Mixed barren areas are areas that are very sparsely vegetated but clearly can not be classified as either rock outcrops or sandy areas. They may be a combination of rock and sand but are characterized by little or no vegetation and a visible rock or sandy surface.
+          Enumerated_Domain_Value_Definition_Source: State of Rhode Island Department of Administration
+    Attribute:
+      Attribute_Label: Descr_2011
+      Attribute_Definition: Abbreviated Description of Land Use
+      Attribute_Definition_Source: State of Rhode Island Department of Administration
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: free text
+    Attribute:
+      Attribute_Label: ACRES_2011
+      Attribute_Definition: Area of feature in acres.
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 0
+          Range_Domain_Maximum: 48430.6
+          Attribute_Units_of_Measure: acre
+          Attribute_Measurement_Resolution: 0.1
+Distribution_Information:
+  Distributor:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: University of Rhode Island Environmental Data Center
+        Contact_Person: Erica Tefft
+      Contact_Address:
+        Address_Type: mailing and physical
+        Address: 1 Greenhouse Road
+        City: Kingston
+        State_or_Province: RI
+        Postal_Code: 02881
+      Contact_Voice_Telephone: 401-874-5054
+      Contact_Electronic_Mail_Address: erica@edc.uri.edu
+      Contact_Instructions: email preferred
+  Distribution_Liability: This dataset is provided 'as is.'  The producer(s) of this dataset, contributors to this dataset, the Rhode Island Geographic Information System (RIGIS) consortium, the State of Rhode Island, and the University of Rhode Island do not make any warranties of any kind for this dataset, and are not liable for any loss or damage however and whenever caused by any use of this dataset.
+  Standard_Order_Process:
+    Digital_Form:
+      Digital_Transfer_Information:
+        Format_Name: Esri shapefile
+        File_Decompression_Technique: ZIP
+      Digital_Transfer_Option:
+        Online_Option:
+          Computer_Contact_Information:
+            Network_Address:
+              Network_Resource_Name: http://www.rigis.org
+    Fees: No fee for downloading directly from the RIGIS Data Distribution System located at http://www.rigis.org.
+Metadata_Reference_Information:
+  Metadata_Date: 20150327
+  Metadata_Review_Date: 20150408
+  Metadata_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Rhode Island Department of Environmental Management
+        Contact_Person: Paul Jordan
+      Contact_Position: Supervising GIS Specialist
+      Contact_Address:
+        Address_Type: mailing and physical
+        Address: 235 Promenade Street
+        City: Providence
+        State_or_Province: RI
+        Postal_Code: 02908
+        Country: US
+      Contact_Voice_Telephone: (401)222-2776 x4315
+      Contact_Electronic_Mail_Address: paul.jordan@dem.ri.gov
+      Contact_Instructions: email is preferred
+  Metadata_Standard_Name: FGDC Content Standard for Digital Geospatial Metadata
+  Metadata_Standard_Version: FGDC-STD-001-1998

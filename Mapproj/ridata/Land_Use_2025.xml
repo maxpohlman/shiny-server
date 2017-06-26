@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin/>
+<pubdate>20060413</pubdate>
+<title>Land Use (2025)</title>
+<edition>2006</edition>
+<geoform>vector digital data</geoform>
+<serinfo>
+<sername>State Guide Plan Element 121</sername>
+<issue>Land Use</issue>
+</serinfo>
+<pubinfo>
+<pubplace/>
+<publish>Division of Planning, RI Statewide Planning Program</publish>
+</pubinfo>
+<othercit>Suggested bibliographic reference: RIGIS, 2006. Land Use 2025; landuse2025. Rhode Island Geographic Information System (RIGIS) Data Distribution System, URL: http://www.rigis.org, Environmental Data Center, University of Rhode Island, Kingston, Rhode Island (last date accessed: 07 October 2014).</othercit>
+<onlink>http://maps.edc.uri.edu/arcgis/rest/services/Atlas_PLAN/Land_Use_2025/MapServer/0</onlink>
+<onlink>http://data.rigis.org/PLAN/LandUse2025.zip</onlink>
+<onlink>http://edc.maps.arcgis.com/home/item.html?id=b46f815844054e62b24ac18721cd2cd2</onlink>
+<lworkcit>
+<citeinfo>
+<pubdate>19930101</pubdate>
+<title>Rhode Island Geographic Information System (RIGIS) Data Distribution System</title>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</citation>
+<descript>
+<abstract>The Land Use 2025 dataset was developed for the Division of Planning, RI Statewide Planning Program as part of an update to a state land use plan. It evolved from a GIS overlay analysis of land suitability and availability and scenario planning for future growth. The analysis focused on the 37% of the State identified as undeveloped and unprotected in a land cover analysis from RIGIS 1995 land use land cover data. The project studied areas for suitability for conservation and development, based on the location of key natural resources and public infrastructure. The results identified areas with future use potential, under three categories of development intensity and two categories of conservation. These data are presented in the Plan as Figure 121-02-(01), Future Land Use Map. Land Use 2025: State Land Use Policies and Plan was published by the RI Statewide Planning Program on April 13, 2006. The intent of the Plan is to bring together the elements of the State Guide Plan such as natural resources, economic development, housing and transportation to guide conservation and land development in the State. The Plan directs the state and communities to concentrate growth inside the Urban Services Boundary (USB) and within potential growth centers in rural areas. It establishes different development approaches for urban and rural areas. These data have several purposes and applications: They are intended to be used as a policy guide for directing growth to areas most capable of supporting current and future developed uses and to direct growth away from areas less suited for development. Secondly, these data are a guide to assist the state and communities in making land use policies. It is important to note these data are a generalized portrayal of state land use policy. These are not a statewide zoning data. Zoning matters and individual land use decisions are the prerogative of local governments. The land use element is the over arching element in Rhode Islands State Guide Plan. The Plan articulates goals, objectives and strategies to guide the current and future land use planning of municipalities and state agencies. The purpose of the plan is to guide future land use and to present policies under which state and municipal plans and land use activities will be reviewed for consistency with the State Guide Plan. The Map is a graphical representation of recommendations for future growth patterns in the State. It depicts where different intensities of development (e.g. parks, urban development, non-urban development) should occur by color. The Map contains a USB that shows where areas with public services supporting urban development presently exist, or are likely to be provided, through 2025. Within the USB, most land is served by public water service; many areas also have public sewer service, as well as, public transit. Also included on the map are growth centers which are potential areas for development and redevelopment outside of the USB. Growth Centers are envisioned to be areas that will encourage development that is both contiguous to existing development with low fiscal and environmental impacts.NOTE: These data will be updated when the associated plan is updated or upon an amendment approved by the State Planning Council. NOTE: Wetlands were not categorized within the Land Use 2025 dataset. When using this dataset, the RIGIS wetlands dataset should be overlaid as a mask. Full descriptions of the categories and intended uses can be found within Section 2-4, Future Land Use Patterns, Categories, and Intended Uses, of the Plan. http://www.planning.ri.gov/documents/guide_plan/landuse2025.pdf</abstract>
+<purpose>The Land Use 2025 dataset was developed for the Division of Planning, RI Statewide Planning Program as part of an update to a state land use plan.</purpose>
+<supplinf>The land use element is the over arching element in Rhode Islands State Guide Plan. The Plan articulates goals, objectives and strategies to guide the current and future land use planning of municipalities and state agencies. The purpose of the plan is to guide future land use and to present policies under which state and municipal plans and land use activities will be reviewed for consistency with the State Guide Plan. The Map is a graphical representation of recommendations for future growth patterns in the State. It depicts where different intensities of development (e.g. parks, urban development, non-urban development) should occur by color. The Map contains a USB that shows where areas with public services supporting urban development presently exist, or are likely to be provided, through 2025. Within the USB, most land is served by public water service; many areas also have public sewer service, as well as, public transit. Also included on the map are growth centers which are potential areas for development and redevelopment outside of the USB. Growth Centers are envisioned to be areas that will encourage development that is both contiguous to existing development with low fiscal and environmental impacts. NOTE: These data will be updated when the associated plan is updated or upon an amendment approved by the State Planning Council. NOTE: Wetlands were not categorized within the Land Use 2025 dataset. When using this dataset, the RIGIS wetlands dataset should be overlaid as a mask. Full descriptions of the categories and intended uses can be found within Section 2-4, Future Land Use Patterns, Categories, and Intended Uses, of the Plan. http://www.planning.ri.gov/landuse/121/landuse2025.pdf.</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>20060413</caldate>
+</sngdate>
+</timeinfo>
+<current>publication date</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>As needed</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-180</westbc>
+<eastbc>180</eastbc>
+<northbc>90</northbc>
+<southbc>-90</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>None</themekt>
+<themekey>Land Use</themekey>
+<themekey>Planning</themekey>
+<themekey>Future State Land Use</themekey>
+<themekey>Growth Management</themekey>
+</theme>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>planningCadastre</themekey>
+</theme>
+<place>
+<placekt>None</placekt>
+<placekey>Northeast</placekey>
+<placekey>USA</placekey>
+<placekey>Rhode Island</placekey>
+<placekey>Northeast USA</placekey>
+<placekey>New England</placekey>
+</place>
+</keywords>
+<accconst>None</accconst>
+<useconst>These data are shared under the RIGIS license agreement, which can be viewed below: This
+ dataset is provided as is.’ The producer(s) of this dataset, 
+contributors to this dataset, the Rhode Island Geographic Information 
+System (RIGIS) consortium, the State of Rhode Island, and the University
+ of Rhode Island do not make any warranties of any kind for this 
+dataset, and are not liable for any loss or damage however and whenever 
+caused by any use of this dataset.Please acknowledge both RIGIS 
+and the primary producer(s) of this dataset in any derived products.  
+Versions of the RIGIS logo suitable for both printed and web-based 
+products are available at http://www.rigis.org/logos.Additional access and use constraints imposed by the data originator:Copying and distribution of this data requires referencing Land Use 2025 as the source document and citation of the Division of Planning, RI Statewide Planning Program as the authors. It is suitable for planning purposes only. It is not adequate for legal boundary or regulatory interpretation.</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>Rhode Island Division of Planning</cntorg>
+<cntper>Nancy Hess</cntper>
+</cntorgp>
+<cntpos>Supervising Planner</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>One Capitol Hill</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02908-5872</postal>
+</cntaddr>
+<cntvoice>401-222-6480</cntvoice>
+<cntemail>nancy.hess@doa.ri.gov</cntemail>
+</cntinfo>
+</ptcontac>
+<datacred>URI EDC, RIGIS; RI Dept. of Administration, Division of Planning. Icon Credit: Luis Prado via The Noun Project</datacred>
+<native>Microsoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.4.1.5686</native>
+<crossref>
+<citeinfo>
+<pubdate>20060413</pubdate>
+<title>Land Use 2025 - Rhode Islands State Land Use Policies and Plan</title>
+</citeinfo>
+</crossref>
+</idinfo>
+<dataqual>
+<posacc>
+<horizpa>
+<horizpar>1:24,000 mapping at best plus or minus 100 ft</horizpar>
+</horizpa>
+</posacc>
+<lineage>
+<srcinfo>
+<typesrc>onLine</typesrc>
+</srcinfo>
+<procstep>
+<procdesc>Created personal geodatabase from original RIGIS data, geoprocessed RIGIS data, and new project data. Various geoprocessing tools were used to create the Land Use 2025 dataset. For a detailed description of the "Geographic Analysis for Land Available and Suitable for Development for Land Use 2025" please review Land Use 2025 - Technical Appendix D located at http://www.planning.ri.gov/landuse/121/D.pdf</procdesc>
+<procdate>20032006</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>RI Statewide Planning Program</cntorg>
+<cntper>Christina Delage Baza &amp; Nancy Hess</cntper>
+</cntorgp>
+<cntpos>GIS Specialist II &amp; Supervising Land Use Planner</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Capitol Hill, 3rd Floor</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02908</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>401-222-6481 &amp; 401-222-6480</cntvoice>
+<cntfax>401-222-2083</cntfax>
+<hours>M-F 8:30 - 4:30</hours>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Metadata citation and distribution information updated for redistribution via the Rhode Island Geogragphic Information System.</procdesc>
+<procdate>20100316</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Greg Bonynge</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-2180</cntvoice>
+<cntemail>greg@edc.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Updated Point of Contact information for this dataset; Christina Delage Baza removed and Nancy Hess retained.</procdesc>
+<procdate>20150529</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Erica Tefft</cntper>
+</cntorgp>
+<cntpos>Research Associate</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<address>Coastal Institute</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-5054</cntvoice>
+<cntemail>erica@edc.uri.edu</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>GT-polygon composed of chains</sdtstype>
+<ptvctcnt>26361</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>PLAN_Land_Use_2025</enttypl>
+</enttyp>
+<attr>
+<attrlabl>OBJECTID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+					<udom>Sequential unique whole numbers that are automatically generated.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+					<udom>Coordinates defining the features.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Acres</attrlabl>
+<attrdef>Acres = Shape_Area * 0.00002295684</attrdef>
+<attrdefs>Calculated from Shape Area</attrdefs>
+<attrdomv>
+					<rdom>
+						<rdommin>0.01</rdommin>
+						<rdommax>43.256</rdommax>
+						<attrunit>Acres</attrunit>
+					</rdom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape_Leng</attrlabl>
+<attrdef>Length of feature in feet</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+					<rdom>
+						<rdommin>86</rdommin>
+						<rdommax>0</rdommax>
+						<attrunit>Feet</attrunit>
+					</rdom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape_Area</attrlabl>
+<attrdef>Area of feature in feet squared</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+					<rdom>
+						<rdommin>457</rdommin>
+						<rdommax>0</rdommax>
+						<attrunit>Feet Squared</attrunit>
+					</rdom>
+				</attrdomv>
+<attrdomv>
+					<udom>Positive real numbers that are automatically generated.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape_Length</attrlabl>
+<attrdef>Length of feature in internal units.</attrdef>
+<attrdefs>Esri</attrdefs>
+<attrdomv>
+					<udom>Positive real numbers that are automatically generated.</udom>
+				</attrdomv>
+</attr>
+<attr>
+<attrlabl>Map_Legend</attrlabl>
+<attrdef>See individual definitions for Map Legend under "Attribute Domain Values" table</attrdef>
+<attrdomv>
+					<edom>
+						<edomv>URBAN DEVELOPMENT</edomv>
+						<edomvd>These are areas that currently do not have public sewer service available but are served (or expected to be served by 2025) by a public water system. This area is enclosed within the Urban Services Boundary.</edomvd>
+					</edom>
+				</attrdomv>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Erica Tefft</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-5054</cntvoice>
+<cntemail>erica@edc.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</distrib>
+<distliab>See access and use constraints information.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>Esri shapefile</formname>
+<filedec>ZIP</filedec>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://www.rigis.org</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>No fee for downloading directly from the RIGIS Data Distribution System located at http://www.rigis.org.</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20161115</metd>
+<metrd>20100316</metrd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>RI Statewide Planning Program</cntorg>
+<cntper>Christina Delage Baza and Nancy Hess</cntper>
+</cntorgp>
+<cntpos>GIS Specialist II &amp; Supervising Land Use Planner</cntpos>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>One Capitol Hill, 3rd Floor</address>
+<city>Providence</city>
+<state>Rhode Island</state>
+<postal>02908</postal>
+<country>US</country>
+</cntaddr>
+<cntvoice>401-222-6481 &amp; 401-222-6480</cntvoice>
+<cntfax>401-222-2083</cntfax>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+</metainfo>
+</metadata>

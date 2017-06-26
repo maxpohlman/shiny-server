@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+<idinfo>
+<citation>
+<citeinfo>
+<origin>Division of Planning, RI Statewide Planning Program</origin>
+<pubdate>20060413</pubdate>
+<title>Growth Centers; growth06</title>
+<edition>2006</edition>
+<geoform>vector digital data</geoform>
+<serinfo>
+<sername>State Guide Plan Element 121</sername>
+<issue>Growth Centers</issue>
+</serinfo>
+<pubinfo>
+<pubplace>Providence, Rhode Island</pubplace>
+<publish>Division of Planning, RI Statewide Planning Program</publish>
+</pubinfo>
+<othercit>Suggested bibliographic reference: RIGIS, 2006. Growth Centers; growth06. Rhode Island Geographic Information System (RIGIS) Data Distribution System, URL: http://www.rigis.org, Environmental Data Center, University of Rhode Island, Kingston, Rhode Island (last date accessed: 7 October 2014).</othercit>
+<onlink>http://www.planning.ri.gov/landuse/121/landuse2025.pdf</onlink>
+<onlink>http://www.rigis.org</onlink>
+<lworkcit>
+<citeinfo>
+<origin>Rhode Island Geographic Information System (RIGIS)</origin>
+<pubdate>1993</pubdate>
+<title>Rhode Island Geographic Information System (RIGIS) Data Distribution System</title>
+<onlink>http://www.rigis.org</onlink>
+</citeinfo>
+</lworkcit>
+</citeinfo>
+</citation>
+<descript>
+<abstract>
+The Growth Centers data on the Future Land Use Map were developed for the Division of Planning, RI Statewide Planning Program as part of an update to a state land use plan. These data are included in the Plan as Figure 121-02-(01), Future Land Use Map. The growth centers were an end product of a GIS overlay analysis of land suitability and scenario planning for future growth.  Initially the factors for centers included 9 urban communities; Providence, East Providence, Pawtucket, Cranston, Central Falls, Warwick, West Warwick, Newport and Woonsocket as potential urban centers as opposed to identifying specific neighborhoods in those municipalities. Historical downtowns and traditional mixed-use central business cores in urban fringe / suburban communities were included as potential town centers, as well as, some of the historical village downtowns and some traditional mixed-use cores in rural communities. All communities in the State either include one or more existing or potential centers or are within the Urban Services Boundary on the map. The growth centers shown in these data were selected by the Statewide Planning staff, the Technical Committee and the State Planning Council through a series of discussions at public meetings, and comments received at public hearings and workshops in the final adoption of Land Use 2025 in 2006.
+Centers depicted on the Future Land Use 2025 map are illustrative of potential new centers that may be established. It is not a intended as a comprehensive inventory of existing centers. Other centers may be illustrated and or proposed in municipal comprehensive plans. Full descriptions of the methodology for the GIS analysis and scenario planning can be found within the Technical Appendix D to Land Use 2025, Geographic Analysis for Land Available and Suitable for Development for Land Use 2025. http://www.planning.ri.gov/landuse/121/D.pdf.
+</abstract>
+<purpose>Land Use 2025: State Land Use Policies and Plan was published by the RI Statewide Planning Program on April 13, 2006. The Plan directs the state and communities to concentrate growth inside the Urban Services Boundary (USB) and within potential growth centers in rural areas. It establishes different development approaches for urban and rural areas. This Map has several purposes and applications: It is intended to be used as a policy guide for directing growth to areas most capable of supporting current and future developed uses and to direct growth away from areas less suited for development. Secondly, the Map is a guide to assist the state and communities in making land use policies. It is important to note the Map is a generalized portrayal of state land use policy. It is not a statewide zoning map. Zoning matters and individual land use decisions are the prerogative of local governments.</purpose>
+<supplinf>
+Growth Centers are envisioned to be areas that will encourage development that is both contiguous to existing development with low fiscal and environmental impacts. They are intended to be compact developed areas (existing or new) containing a defined central core that accommodate community needs for residential and economic functions.  Centers are intended to provide optimum use of land and services, and offer a choice of diverse housing stock, economic functions, and cultural and governmental uses. Density will vary greatly between centers subject to site constraints; however, it is intended that they will share the common characteristic of compact development that capitalizes on existing infrastructure. Centers should reflect traditional New England development patterns with a human scale of blocks, streets, open spaces that offer walkability and access to transit where available. In suburban areas, centers should be distinguished from surrounding sprawling development by a closer proximity between residential and non-residential uses. In rural areas, centers should be surrounded by natural areas, farmland, or open space, and may have a mixed-use and or commercial area in the core for neighborhood-scale goods and services.  
+The land use element is the over arching element in Rhode Island's State Guide Plan. The Plan articulates goals, objectives and strategies to guide the current and future land use planning of municipalities and state agencies. The purpose of the plan is to guide future land use and to present policies under which state and municipal plans and land use activities will be reviewed for consistency with the State Guide Plan. The Map is a graphical representation of recommendations for future growth patterns in the State. The Map contains a USB that shows where areas with public services supporting urban development presently exist, or are likely to be provided, through 2025. Also included on the map are growth centers which are potential areas for development and redevelopment outside of the USB.
+These data will be updated when plan is updated or upon an amendment approved by the State Planning Council.
+</supplinf>
+</descript>
+<timeperd>
+<timeinfo>
+<sngdate>
+<caldate>20060413</caldate>
+</sngdate>
+</timeinfo>
+<current>publication date</current>
+</timeperd>
+<status>
+<progress>Complete</progress>
+<update>Infrequent</update>
+</status>
+<spdom>
+<bounding>
+<westbc>-71.749888</westbc>
+<eastbc>-71.168883</eastbc>
+<northbc>41.979509</northbc>
+<southbc>41.173211</southbc>
+</bounding>
+</spdom>
+<keywords>
+<theme>
+<themekt>ISO 19115 Topic Category</themekt>
+<themekey>planningCadastre</themekey>
+</theme>
+<theme>
+<themekt>none</themekt>
+<themekey>Growth Centers</themekey>
+<themekey>Future Land Use</themekey>
+<themekey>Planning</themekey>
+<themekey>Growth Management</themekey>
+<themekey>Growth Centers</themekey>
+</theme>
+<place>
+<placekt>none</placekt>
+<placekey>USA</placekey>
+<placekey>Northeast USA</placekey>
+<placekey>New England</placekey>
+<placekey>Rhode Island</placekey>
+<placekey>Northeast</placekey>
+</place>
+</keywords>
+<accconst>None.</accconst>
+<useconst>
+Copying and distribution of this data requires referencing Land Use 2025 as the source document and citation of the Division of Planning, RI Statewide Planning Program as the authors. It is suitable for planning purposes only. It is not adequate for legal boundary or regulatory interpretation.
+This dataset is provided 'as is.’  The producer(s) of this dataset, contributors to this dataset, the Rhode Island Geographic Information System (RIGIS) consortium, the State of Rhode Island, and the University of Rhode Island do not make any warranties of any kind for this dataset, and are not liable for any loss or damage however and whenever caused by any use of this dataset.
+Please acknowledge both RIGIS and the primary producer(s) of this dataset in any derived products.  Versions of the RIGIS logo suitable for both printed and web-based products are available at http://www.rigis.org/logos.
+</useconst>
+<ptcontac>
+<cntinfo>
+<cntorgp>
+<cntorg>Rhode Island Division of Planning</cntorg>
+<cntper>Nancy Hess</cntper>
+</cntorgp>
+<cntpos>Supervising Planner</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>One Capitol Hill</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02908-5872</postal>
+</cntaddr>
+<cntvoice>401-222-6480</cntvoice>
+<cntemail>nancy.hess@doa.ri.gov</cntemail>
+</cntinfo>
+</ptcontac>
+<native>Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.1.3000</native>
+<crossref>
+<citeinfo>
+<origin>RI Statewide Planning Program</origin>
+<pubdate>04/13/06</pubdate>
+<title>Land Use 2025 - Rhode Island's State Land Use Policies and Plan</title>
+<edition>2006</edition>
+<geoform>map</geoform>
+<serinfo>
+<sername>State Guide Plan Element 121</sername>
+<issue>Land Use</issue>
+</serinfo>
+<pubinfo>
+<pubplace>Providence, Rhode Island</pubplace>
+<publish>RI Statewide Planning Program</publish>
+</pubinfo>
+<onlink>http://www.planning.ri.gov/landuse/121/landuse2025.pdf</onlink>
+</citeinfo>
+</crossref>
+</idinfo>
+<dataqual>
+<posacc>
+<horizpa>
+<horizpar>1:24,000 mapping at best plus or minus 100 ft</horizpar>
+</horizpa>
+</posacc>
+<lineage>
+<srcinfo>
+<typesrc>online</typesrc>
+<srctime>
+<timeinfo>
+<sngdate>
+<caldate>04/13/06</caldate>
+</sngdate>
+</timeinfo>
+<srccurr>publication date</srccurr>
+</srctime>
+</srcinfo>
+<procstep>
+<procdesc>A Growth Centers point dataset was created using points from the RIGIS Villages dataset and revised by the Statewide Planning staff, the Technical Committee and the State Planning Council through a series of discussions at public meetings, and comments received at public hearings and workshops in the final adoption of Land Use 2025 in 2006.</procdesc>
+<procdate>2003-2006</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>RI Statewide Planning Program</cntorg>
+<cntper>Nancy Hess</cntper>
+</cntorgp>
+<cntpos>Supervising Land Use Planner</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>One Capitol Hill, 3rd Floor</address>
+<city>Providence</city>
+<state>RI</state>
+<postal>02908</postal>
+</cntaddr>
+<cntvoice>401-222-6480</cntvoice>
+<cntfax>401-222-2083</cntfax>
+<hours>M-F 8:30 - 4:30</hours>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Metadata citation and distribution information updated for redistribution via the Rhode Island Geogragphic Information System.</procdesc>
+<procdate>20100317</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Greg Bonynge</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-2180</cntvoice>
+<cntemail>greg@edc.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</proccont>
+</procstep>
+<procstep>
+<procdesc>Updated Point of Contact information for this dataset to reflect email address.</procdesc>
+<procdate>20150528</procdate>
+<proccont>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Erica Tefft</cntper>
+</cntorgp>
+<cntpos>Research Associate</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>Coastal Institute</address>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-5054</cntvoice>
+<cntemail>erica@edc.uri.edu</cntemail>
+</cntinfo>
+</proccont>
+</procstep>
+</lineage>
+</dataqual>
+<spdoinfo>
+<direct>Vector</direct>
+<ptvctinf>
+<sdtsterm>
+<sdtstype>Entity point</sdtstype>
+<ptvctcnt>21</ptvctcnt>
+</sdtsterm>
+</ptvctinf>
+</spdoinfo>
+<spref>
+<horizsys>
+<planar>
+<gridsys>
+<gridsysn>State Plane Coordinate System 1983</gridsysn>
+<spcs>
+<spcszone>3800</spcszone>
+<transmer>
+<sfctrmer>0.999994</sfctrmer>
+<longcm>-71.500000</longcm>
+<latprjo>41.083333</latprjo>
+<feast>328083.333333</feast>
+<fnorth>0.000000</fnorth>
+</transmer>
+</spcs>
+</gridsys>
+<planci>
+<plance>coordinate pair</plance>
+<coordrep>
+<absres>0.000000</absres>
+<ordres>0.000000</ordres>
+</coordrep>
+<plandu>survey feet</plandu>
+</planci>
+</planar>
+<geodetic>
+<horizdn>North American Datum of 1983</horizdn>
+<ellips>Geodetic Reference System 80</ellips>
+<semiaxis>6378137.000000</semiaxis>
+<denflat>298.257222</denflat>
+</geodetic>
+</horizsys>
+</spref>
+<eainfo>
+<detailed>
+<enttyp>
+<enttypl>GrowthCenters</enttypl>
+</enttyp>
+<attr>
+<attrlabl>FID</attrlabl>
+<attrdef>Internal feature number.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Sequential unique whole numbers that are automatically generated.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Shape</attrlabl>
+<attrdef>Feature geometry.</attrdef>
+<attrdefs>ESRI</attrdefs>
+<attrdomv>
+<udom>Coordinates defining the features.</udom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>NAME</attrlabl>
+<attrdef>Name of Growth Center</attrdef>
+<attrdefs>RI Division of Planning</attrdefs>
+<attrdomv>
+<edom>
+<edomv>BLOCK ISLAND</edomv>
+<edomvd>Town of New Shoreham Village Center</edomvd>
+</edom>
+<edom>
+<edomv>BRADFORD</edomv>
+<edomvd>Town of Westerly Village Center</edomvd>
+</edom>
+<edom>
+<edomv>CAROLINA</edomv>
+<edomvd>Town of Charlestown Village Center</edomvd>
+</edom>
+<edom>
+<edomv>CHARLESTOWN</edomv>
+<edomvd>Town of Charlestown Village Center</edomvd>
+</edom>
+<edom>
+<edomv>CHEPACHET</edomv>
+<edomvd>Town of Glocester Village Center</edomvd>
+</edom>
+<edom>
+<edomv>COVENTRY</edomv>
+<edomvd>Town of Coventry Village Center</edomvd>
+</edom>
+<edom>
+<edomv>EXETER</edomv>
+<edomvd>Town of Exeter Village Center</edomvd>
+</edom>
+<edom>
+<edomv>HARRISVILLE</edomv>
+<edomvd>Town of Burrillville Village Center</edomvd>
+</edom>
+<edom>
+<edomv>HOPE VALLEY</edomv>
+<edomvd>Town of Hopkinton Village Center</edomvd>
+</edom>
+<edom>
+<edomv>LITTLE COMPTON</edomv>
+<edomvd>Town of Little Compton Village Center</edomvd>
+</edom>
+<edom>
+<edomv>MIDDLETOWN</edomv>
+<edomvd>Town of Middletown Town Center</edomvd>
+</edom>
+<edom>
+<edomv>NASONVILLE</edomv>
+<edomvd>Town of Burrillville Village Center</edomvd>
+</edom>
+<edom>
+<edomv>NOOSENECK</edomv>
+<edomvd>Town of West Greenwich Village Center</edomvd>
+</edom>
+<edom>
+<edomv>NORTH FOSTER</edomv>
+<edomvd>Town of Foster Village Center</edomvd>
+</edom>
+<edom>
+<edomv>PASCOAG</edomv>
+<edomvd>Town of Burrillville Village Center</edomvd>
+</edom>
+<edom>
+<edomv>PORTSMOUTH</edomv>
+<edomvd>Town of Portsmouth Town Center</edomvd>
+</edom>
+<edom>
+<edomv>SHANNOCK</edomv>
+<edomvd>Town of Richmond Village Center</edomvd>
+</edom>
+<edom>
+<edomv>TIVERTON</edomv>
+<edomvd>Town of Tiverton Village Center</edomvd>
+</edom>
+<edom>
+<edomv>WEST KINGSTON</edomv>
+<edomvd>Town of South Kingstown Village Center</edomvd>
+</edom>
+<edom>
+<edomv>WICKFORD JCT</edomv>
+<edomvd>Town of North Kingstown Village Center</edomvd>
+</edom>
+<edom>
+<edomv>WYOMING</edomv>
+<edomvd>Town of Richmond Village Center</edomvd>
+</edom>
+</attrdomv>
+</attr>
+<attr>
+<attrlabl>Cntr_Class</attrlabl>
+<attrdef>Growth Center Type</attrdef>
+<attrdefs>RI Division of Planning</attrdefs>
+<attrdomv>
+<edom>
+<edomv>Town Center</edomv>
+<edomvd>Historical downtowns and traditional mixed-use central business cores in urban fringe and suburban communities</edomvd>
+</edom>
+<edom>
+<edomv>Village Centers</edomv>
+<edomvd>Historical village downtowns and some traditional mixed-use cores in rural communities</edomvd>
+</edom>
+</attrdomv>
+</attr>
+</detailed>
+</eainfo>
+<distinfo>
+<distrib>
+<cntinfo>
+<cntorgp>
+<cntorg>University of Rhode Island Environmental Data Center</cntorg>
+<cntper>Erica Tefft</cntper>
+</cntorgp>
+<cntaddr>
+<addrtype>mailing and physical</addrtype>
+<address>1 Greenhouse Road</address>
+<city>Kingston</city>
+<state>RI</state>
+<postal>02881</postal>
+</cntaddr>
+<cntvoice>401-874-5054</cntvoice>
+<cntemail>erica@edc.uri.edu</cntemail>
+<cntinst>email preferred</cntinst>
+</cntinfo>
+</distrib>
+<distliab>This dataset is provided 'as is.'  The producer(s) of this dataset, contributors to this dataset, the Rhode Island Geographic Information System (RIGIS) consortium, the State of Rhode Island, and the University of Rhode Island do not make any warranties of any kind for this dataset, and are not liable for any loss or damage however and whenever caused by any use of this dataset.</distliab>
+<stdorder>
+<digform>
+<digtinfo>
+<formname>Esri shapefile</formname>
+<filedec>ZIP</filedec>
+</digtinfo>
+<digtopt>
+<onlinopt>
+<computer>
+<networka>
+<networkr>http://www.rigis.org</networkr>
+</networka>
+</computer>
+</onlinopt>
+</digtopt>
+</digform>
+<fees>No fee for downloading directly from the RIGIS Data Distribution System located at http://www.rigis.org.</fees>
+</stdorder>
+</distinfo>
+<metainfo>
+<metd>20100302</metd>
+<metrd>20100317</metrd>
+<metc>
+<cntinfo>
+<cntorgp>
+<cntorg>RI Statewide Planning Program</cntorg>
+<cntper>Nancy Hess &amp; Christina Delage Baza</cntper>
+</cntorgp>
+<cntpos>Supervising Land Use Planner &amp; GIS Specialist II</cntpos>
+<cntaddr>
+<addrtype>mailing and physical address</addrtype>
+<address>One Capitol Hill, 3rd Floor</address>
+<city>Providence</city>
+<state>Rhode Island</state>
+<postal>02908</postal>
+<country>USA</country>
+</cntaddr>
+<cntvoice>401-222-6480</cntvoice>
+<cntfax>401-222-2083</cntfax>
+<hours>8:30-4:30</hours>
+</cntinfo>
+</metc>
+<metstdn>FGDC Content Standards for Digital Geospatial Metadata</metstdn>
+<metstdv>FGDC-STD-001-1998</metstdv>
+<mettc>local time</mettc>
+<metextns>
+<onlink>http://www.esri.com/metadata/esriprof80.html</onlink>
+<metprof>ESRI Metadata Profile</metprof>
+</metextns>
+</metainfo>
+</metadata>
