@@ -7,8 +7,7 @@ options(shiny.sanitize.errors = FALSE)
 
 #streams <- st_read("ridata/streams.shp")
 #muni<-readRDS(file = 'ridata/muni.rds')
-muni <- st_read("ridata/muni97d.shp")
-muni <- st_transform(muni, 4326)
+
 #streams <- st_transform(streams, 4326)
 #lu <- st_read("ridata/Land_Use_2025.shp")
 #road<- st_read('ridata/RIDOT_Roads_2016.shp')
@@ -18,7 +17,8 @@ muni <- st_transform(muni, 4326)
 
 shinyApp( 
   
-  
+  muni <- st_read("ridata/muni97d.shp"),
+  muni <- st_transform(muni, 4326),
 
 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
