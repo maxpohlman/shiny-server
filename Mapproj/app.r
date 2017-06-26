@@ -21,8 +21,8 @@ shinyApp(
                                checkboxInput("rivers", label = "Show rivers?", FALSE),
                                checkboxInput("roads", label = "Show roads?", FALSE),
                                checkboxInput("pond", label = "Show ponds and lakes?", FALSE),
-                               checkboxInput("busrt", label = "Show bus routes?", FALSE),
-                               selectInput("landuse", label = "Type of land use", choices = c('Clear map', sort(unique(lulc$lu))))
+                               checkboxInput("busrt", label = "Show bus routes?", FALSE)
+                               #selectInput("landuse", label = "Type of land use", choices = c('Clear map', sort(unique(lulc$lu))))
                                           ),
                              #Adds plot area
                              mainPanel(
@@ -45,13 +45,6 @@ shinyApp(
    
   
   server = function(input,output,session){
-    args = commandArgs(TRUE)
-    
-    results_file = args[1]
-    
-    output_path = dirname(normalizePath(results_file))
-    setwd(output_path)
-    getwd()
     growth_cent <- st_read("ridata/growth06.shp")
     streams <- st_read("ridata/streams.shp")
     muni <- st_read("ridata/muni97d.shp")
