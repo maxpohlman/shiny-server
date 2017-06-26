@@ -45,7 +45,13 @@ shinyApp(
    
   
   server = function(input,output,session){
-    ## Reads in data - CHANGE DIRECTORIES ##
+    args = commandArgs(TRUE)
+    
+    results_file = args[1]
+    
+    output_path = dirname(normalizePath(results_file))
+    setwd(output_path)
+    getwd()
     growth_cent <- st_read("ridata/growth06.shp")
     streams <- st_read("ridata/streams.shp")
     muni <- st_read("ridata/muni97d.shp")
