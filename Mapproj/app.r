@@ -4,7 +4,6 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 library(httr)
-
 options(shiny.sanitize.errors = FALSE)
 
 #streams <- st_read("ridata/streams.shp")
@@ -60,8 +59,7 @@ shinyApp(
    
   
   server = function(input,output,session){
-    muni <- st_read("ridata/muni97d.shp")
-    muni <- st_transform(muni, 4326)
+    muni <- readRDS('ridata/muni.rds')
     
     ################################# 
     # Observes for map geometry     #
