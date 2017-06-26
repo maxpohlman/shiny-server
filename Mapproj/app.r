@@ -6,8 +6,7 @@ library(dplyr)
 options(shiny.sanitize.errors = FALSE)
 
 #streams <- st_read("ridata/streams.shp")
-muni <- st_read("ridata/muni97d.shp")
-muni <- st_transform(muni, 4326)
+
 #streams <- st_transform(streams, 4326)
 #lu <- st_read("ridata/Land_Use_2025.shp")
 #road<- st_read('ridata/RIDOT_Roads_2016.shp')
@@ -60,7 +59,8 @@ shinyApp(
    
   
   server = function(input,output,session){
-    
+    muni <- st_read("ridata/muni97d.shp")
+    muni <- st_transform(muni, 4326)
     
     ################################# 
     # Observes for map geometry     #
