@@ -3,7 +3,7 @@ library(shiny)
 library(rgdal)
 library(ggplot2)
 library(dplyr)
-library(raster)
+#library(raster)
 library(sp)
 options(shiny.sanitize.errors = FALSE)
 
