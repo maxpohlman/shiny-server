@@ -4,6 +4,7 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 library(httr)
+library(shinyjs)
 options(shiny.sanitize.errors = FALSE)
 
 
@@ -12,10 +13,10 @@ shinyApp(
 
 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
-                  tabPanel("Where things are",
+                  tabPanel("geom_sf practice",
                            sidebarLayout(
-                             sidebarPanel(
-                               p("This is a personal mapping project I am doing to teach myself GIS.", strong("Some features take some time to update on the map, especially if you do the whole state!"),
+                             sidebarPanel( shinyjs::useShinyjs(),
+                               p("This is a personal mapping project I am doing to teach myself GIS.", strong("Some features are disabled for the whole state due to computing constraints."),
                                  "Things are added in the order you select them. If something disappears, uncheck and re-check the boxes"),
                                selectInput("scale", label = "What do you want to plot", choices = c('Entire State',
                                                                                      'County',
@@ -23,6 +24,7 @@ shinyApp(
                                            selected = 'Entire State'),
                                selectInput("smallscale", label = "Specific County or Municipality", choices = 'Entire State',
                                            selected = 'Entire State'),
+                               span(strong(textOutput('statewarning')), style="color:red"),
                                checkboxInput("lu", label = "Show types of land use?", FALSE),
                                checkboxInput("rivers", label = "Show rivers?", FALSE),
                                checkboxInput("roads", label = "Show roads?", FALSE),
@@ -35,7 +37,7 @@ shinyApp(
                                plotOutput('plot')
                                
                              ))),
-                           tabPanel(HTML("Demographic Maps (NYI)</a></li><li><a href=\"http://maxpohlman.com\">Back to my website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/Mapproj/app.r\">View source code"),
+                           tabPanel(HTML("Leaflet practice (NYI)</a></li><li><a href=\"http://maxpohlman.com\">Back to my website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/Mapproj/app.r\">View source code"),
                                     
                                     mainPanel(
                                       tableOutput('tabo')
@@ -53,38 +55,47 @@ shinyApp(
   server = function(input,output,session){
     withProgress(message = 'Loading data', value = 1, {
       
-    growth_cent <- st_read("ridata/growth06.shp")
-    streams <- st_read("ridata/streams.shp")
-    muni <- st_read("ridata/muni97d.shp")
-    lulc <- st_read("ridata/rilc11d.shp")
-    lulc$lu<-as.character(lulc$Descr_2011)
-    growth_cent <- st_transform(growth_cent, 4326)
-    muni <- st_transform(muni, 4326)
-    streams <- st_transform(streams, 4326)
-    lulc <- st_transform(lulc,4326)
-    lu <- st_read("ridata/Land_Use_2025.shp")
-    road<- st_read('ridata/RIDOT_Roads_2016.shp')
-    busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
-    pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
-    census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
+      growth_cent <- st_read("ridata/growth06.shp")
+      streams <- st_read("ridata/streams.shp")
+      muni <- st_read("ridata/muni97d.shp")
+      lulc <- st_read("ridata/rilc11d.shp")
+      lulc$lu<-as.character(lulc$Descr_2011)
+      growth_cent <- st_transform(growth_cent, 4326)
+      muni <- st_transform(muni, 4326)
+      streams <- st_transform(streams, 4326)
+      lulc <- st_transform(lulc,4326)
+      lu <- st_read("ridata/Land_Use_2025.shp")
+      road<- st_read('ridata/RIDOT_Roads_2016.shp')
+      busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
+      pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
+      census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
     })
     ################################# 
     # Observes for map geometry     #
     #################################
     
     observe({
+      
       if (input$scale == 'Entire State'){
         updateSelectInput(session, "smallscale",
                           choices = 'Entire State')
+        shinyjs::disable("lu")
+        shinyjs::disable("roads")
+        output$statewarning<-renderText({"WARNING: Plotting anything for the entire state will take extra time"})
       }
       if (input$scale == 'County'){
         updateSelectInput(session, "smallscale",
                           choices = sort(unique(muni$COUNTY)))
+        output$statewarning<-renderText({""})
+        shinyjs::enable("lu")
+        shinyjs::enable("roads")
       }
       if (input$scale == 'Municipality'){
         updateSelectInput(session, "smallscale",
                           choices = sort(unique(muni$NAME)))
-
+        output$statewarning<-renderText({""})
+        shinyjs::enable("lu")
+        shinyjs::enable("roads")
       }
           })
     
