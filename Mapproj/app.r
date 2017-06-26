@@ -4,9 +4,9 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 options(shiny.sanitize.errors = FALSE)
+load('ridata/data.RData')
 
-shinyApp( onStart = function(){
-load('ridata/data.RData')  },
+shinyApp( 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
                   tabPanel("Where things are",
                            sidebarLayout(
