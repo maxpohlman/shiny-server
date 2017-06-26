@@ -19,6 +19,7 @@ shinyApp( onStart = function(){
   busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
   pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
   census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
+  options(shiny.sanitize.errors = F)
 },
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
                   tabPanel("Where things are",
