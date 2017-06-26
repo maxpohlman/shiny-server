@@ -4,7 +4,6 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 options(shiny.sanitize.errors = FALSE)
-load('ridata/data.RData')
 
 shinyApp( 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
@@ -47,7 +46,7 @@ shinyApp(
    
   
   server = function(input,output,session){
-
+    load('ridata/data.RData')
     
     ################################# 
     # Observes for map geometry     #
