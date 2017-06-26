@@ -1,6 +1,6 @@
 library(shinythemes)
 library(shiny)
-library("sf")
+library(sf)
 library(ggplot2)
 library(dplyr)
 
@@ -32,7 +32,7 @@ shinyApp(
                                plotOutput('plot')
                                
                              ))),
-                           tabPanel(HTML("Demographic Maps (WIP)</a></li><li><a href=\"http://maxpohlman.com\">Back to my website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/mydata/app.r\">View source code"),
+                           tabPanel(HTML("Demographic Maps (NYI)</a></li><li><a href=\"http://maxpohlman.com\">Back to my website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/mydata/app.r\">View source code"),
                                     
                                     mainPanel(
                                       tableOutput('tabo')
@@ -48,7 +48,6 @@ shinyApp(
    
   
   server = function(input,output,session){
-    getwd()
     ## Reads in data - CHANGE DIRECTORIES ##
     growth_cent <- st_read("ridata/growth06.shp")
     streams <- st_read("ridata/streams.shp")
