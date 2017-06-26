@@ -16,9 +16,6 @@ options(shiny.sanitize.errors = FALSE)
 #census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
 
 shinyApp( 
-  
-  muni <- st_read("ridata/muni97d.shp"),
-  muni <- st_transform(muni, 4326),
 
 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
@@ -61,7 +58,8 @@ shinyApp(
    
   
   server = function(input,output,session){
-    
+    muni <- st_read("ridata/muni97d.shp")
+    muni <- st_transform(muni, 4326)
     
     ################################# 
     # Observes for map geometry     #
