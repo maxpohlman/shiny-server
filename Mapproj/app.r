@@ -3,6 +3,7 @@ library(shiny)
 library(sf)
 library(ggplot2)
 library(dplyr)
+options(shiny.sanitize.errors = FALSE)
 growth_cent <- st_read("ridata/growth06.shp")
 streams <- st_read("ridata/streams.shp")
 muni <- st_read("ridata/muni97d.shp")
@@ -17,7 +18,6 @@ road<- st_read('ridata/RIDOT_Roads_2016.shp')
 busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
 pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
 census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
-
 shinyApp(
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
                   tabPanel("Where things are",
