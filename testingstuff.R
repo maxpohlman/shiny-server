@@ -45,8 +45,17 @@ plot(lu)
 
 
 
+save(busroutes, census, growth_cent, lu, lulc, muni, pond, road, streams, file='data.RData')
 
-
+saveRDS(busroutes, file = "busroutes.rds")
+saveRDS(census, file = "census.rds")
+saveRDS(growth_cent, file = "growth_cent")
+saveRDS(lu, file = "lu.rds")
+saveRDS(lulc, file = "lulc.rds")
+saveRDS(muni, file = "muni.rds")
+saveRDS(pond, file = "pond.rds")
+saveRDS(road, file = "road.rds")
+saveRDS(streams, file = "streams.rds")
 
 
 
