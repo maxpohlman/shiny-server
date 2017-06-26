@@ -86,3 +86,5 @@ ggplot() +
   geom_text(data = busrts) +
   scale_fill_viridis("Map_Legend")
   theme(legend.position="none")
+
+  setwd('/Mapproj/')
