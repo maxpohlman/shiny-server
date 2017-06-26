@@ -6,15 +6,7 @@ library(dplyr)
 library(httr)
 options(shiny.sanitize.errors = FALSE)
 
-#streams <- st_read("ridata/streams.shp")
-#muni<-readRDS(file = 'ridata/muni.rds')
 
-#streams <- st_transform(streams, 4326)
-#lu <- st_read("ridata/Land_Use_2025.shp")
-#road<- st_read('ridata/RIDOT_Roads_2016.shp')
-#busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
-#pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
-#census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
 
 shinyApp( 
 
@@ -59,8 +51,23 @@ shinyApp(
    
   
   server = function(input,output,session){
-    muni <- readRDS('ridata/muni.rds')
-    
+    withProgress(message = 'Loading data', value = 1, {
+      
+    growth_cent <- st_read("ridata/growth06.shp")
+    streams <- st_read("ridata/streams.shp")
+    muni <- st_read("ridata/muni97d.shp")
+    lulc <- st_read("ridata/rilc11d.shp")
+    lulc$lu<-as.character(lulc$Descr_2011)
+    growth_cent <- st_transform(growth_cent, 4326)
+    muni <- st_transform(muni, 4326)
+    streams <- st_transform(streams, 4326)
+    lulc <- st_transform(lulc,4326)
+    lu <- st_read("ridata/Land_Use_2025.shp")
+    road<- st_read('ridata/RIDOT_Roads_2016.shp')
+    busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
+    pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
+    census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
+    })
     ################################# 
     # Observes for map geometry     #
     #################################
@@ -104,6 +111,7 @@ shinyApp(
       ################################# 
       # Filters and plots Rivers and roads#
       ################################# 
+      withProgress(message = 'Updating map', value = 1, {
       if(input$lu == TRUE){
         luu <- lu %>% st_intersection(boundaries)
         p<- p+geom_sf(data=luu, aes(fill = Map_Legend))
@@ -124,7 +132,7 @@ shinyApp(
         pondss<- pond %>% st_intersection(boundaries)
         p<- p+ geom_sf(data = pondss, fill = 'dodgerblue2', color = 'dodgerblue2') 
       }
-      
+      })
       ################################# 
       # Filters and plots Land use    #
       ################################# 
