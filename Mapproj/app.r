@@ -4,9 +4,6 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 
-
-
-
 shinyApp(
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
                   tabPanel("Where things are",
