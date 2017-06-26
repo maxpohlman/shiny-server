@@ -4,6 +4,7 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 library(httr)
+library(rgdal)
 options(shiny.sanitize.errors = FALSE)
 
 #streams <- st_read("ridata/streams.shp")
