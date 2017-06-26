@@ -4,6 +4,7 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 options(shiny.sanitize.errors = FALSE)
+
 busroutes<<-readRDS(file = "ridata/busroutes.rds")
 census<<-readRDS(file = "ridata/census.rds")
 growth_cent<<-readRDS(file = "ridata/growth_cent")
@@ -13,7 +14,9 @@ muni<<-readRDS(file = "ridata/muni.rds")
 pond<<-readRDS(file = "ridata/pond.rds")
 road<<-readRDS(file = "ridata/road.rds")
 streams<<-readRDS(file = "ridata/streams.rds")
+
 shinyApp( 
+  
   
 
 
