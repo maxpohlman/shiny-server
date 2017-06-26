@@ -6,15 +6,15 @@ library(dplyr)
 options(shiny.sanitize.errors = FALSE)
 
 #streams <- st_read("ridata/streams.shp")
-muni <- st_read("ridata/muni97d.shp")
-muni <- st_transform(muni, 4326)
+#muni <- st_read("ridata/muni97d.shp")
+#muni <- st_transform(muni, 4326)
 #streams <- st_transform(streams, 4326)
 #lu <- st_read("ridata/Land_Use_2025.shp")
 #road<- st_read('ridata/RIDOT_Roads_2016.shp')
 #busroutes <- st_read('ridata/RIPTA_Bus_Routes.shp')
 #pond <- st_read('ridata/Rhode_Island_Ponds_and_Lakes.shp')
 #census <- st_read('ridata/US_Census_2010_Summary_File_1_Indicators.shp')
-
+load('ridata/data.RData')
 shinyApp( 
   
   
