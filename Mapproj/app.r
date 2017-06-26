@@ -4,19 +4,19 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 options(shiny.sanitize.errors = FALSE)
-
-shinyApp( onStart = function(){
+busroutes<<-readRDS(file = "ridata/busroutes.rds")
+census<<-readRDS(file = "ridata/census.rds")
+growth_cent<<-readRDS(file = "ridata/growth_cent")
+lu<<-readRDS(file = "ridata/lu.rds")
+lulc<<-readRDS(file = "ridata/lulc.rds")
+muni<<-readRDS(file = "ridata/muni.rds")
+pond<<-readRDS(file = "ridata/pond.rds")
+road<<-readRDS(file = "ridata/road.rds")
+streams<<-readRDS(file = "ridata/streams.rds")
+shinyApp( 
   
-  readRDS(file = "ridata/busroutes.rds")
-  readRDS(file = "ridata/census.rds")
-  readRDS(file = "ridata/growth_cent")
-  readRDS(file = "ridata/lu.rds")
-  readRDS(file = "ridata/lulc.rds")
-  muni<-readRDS(file = "ridata/muni.rds")
-  readRDS(file = "ridata/pond.rds")
-  readRDS(file = "ridata/road.rds")
-  readRDS(file = "ridata/streams.rds")
-},
+
+
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
                   tabPanel("Where things are",
                            sidebarLayout(
