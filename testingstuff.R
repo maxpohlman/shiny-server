@@ -1,5 +1,7 @@
 install.packages("githubinstall") # if you have not installed "devtools" package
 install.packages("viridis")
+install.packages('leaflet')
+devtools::install_github('rstudio/leaflet')
 library(githubinstall)
 library(sf)
 library(ggplot2)
@@ -57,8 +59,7 @@ saveRDS(pond, file = "pond.rds")
 saveRDS(road, file = "road.rds")
 saveRDS(streams, file = "streams.rds")
 
-
-
+setwd('C:/Users/Max/Documents/Shiny/shiny-server/Mapproj')
 
 growth_cent <- st_read("ridata/growth06.shp")
 streams <- st_read("ridata/streams.shp")
@@ -97,3 +98,28 @@ ggplot() +
   theme(legend.position="none")
 
   setwd('/Mapproj/')
+  
+  
+  
+  
+  
+install.packages('leaflet')
+library(leaflet)
+x11()
+l<-leaflet() %>% setView(lng = -71.3795602, lat = 42.0182825, zoom = 8) %>% addTiles()
+l
+asd<-data.frame(latt= 42.3373123226834, lngg =  -71.1191421747208, popupp = 'My House', labell = 'Max', stringsAsFactors = FALSE)
+saveRDS(asd,'introdata/markers.rds')
+saveRDS(asd, 'introdata/backup.rds')
+ll<-readRDS('introdata/markers.rds')
+df$popup<-as.character(df$popup)
+df$label<-as.character(df$label)
+lo<-c(5,10,'hi','bye')
+rbind(df,lo)
+df<-rbind(df,lo)
+
+
+m <- leaflet() %>% setView(lng = -71.0589, lat = 42.3601, zoom = 12)
+m %>% addTiles() %>% addProviderTiles(providers$Stamen.Toner) %>% addTiles()
+q<-'Esri.WorldImagery'
+match(q,providers)

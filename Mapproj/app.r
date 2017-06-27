@@ -4,15 +4,57 @@ library(sf)
 library(ggplot2)
 library(dplyr)
 library(httr)
+library(leaflet)
 library(shinyjs)
-options(shiny.sanitize.errors = FALSE)
+mdata<-readRDS('introdata/markers.rds')
 
+options(shiny.sanitize.errors = FALSE)
 
 
 shinyApp( 
 
 
   ui =navbarPage( "Max's Map Project", theme = shinytheme("cerulean"),
+                  tabPanel("Locations",
+                           sidebarPanel(
+                             p('Welcome to my mapping/GIS shiny app! The above tabs are various small projects I am working on to teach 
+                               myself various ways of analyzing and presenting spatial data in a user friendly and interactive way.'),
+                             p("While you're here, why not prove it to the world? You can add markers to the map on the right by clicking
+                               a location to get the Lat/Lng coordinates, then clicking the 'Add Location' button. You can also leave
+                               your name and a message that appears when the marker is clicked."),
+                             p("Feel free to add anything from your current location to your favorite pizza place to your most memorable
+                               vacation spot, and everything inbetween!"),
+                             radioButtons('base','Choose Basemap',c('Open Street Map' = "OpenStreetMap",
+                                                                            'ESRI World Imagery' = 'Esri.WorldImagery',
+                                                                    'Stamen Toner'='Stamen.Toner',
+                                                                    'Earth at Night' = 'NASAGIBS.ViirsEarthAtNight2012',
+                                                                    'ESRI Topographical Map' = 'Esri.WorldTopoMap')
+                             )
+                           ),
+                           mainPanel(
+                             p("Click and drag the map to pan locations and use the scroll wheel to zoom in and out."),
+                             leafletOutput('l'),
+                             p(),
+                             fluidRow(
+                              column(3,textInput('name',"Your Name",value = 'Anonymous')),
+                              column(3,textInput('mess',"Your Message",value = 'Cool site!')),
+                              br(),
+                              br(),
+                              column(5,textOutput('latlong'))
+                                      ),
+                             
+                             fluidRow(
+                              column(2,actionButton('but', 'Add Location')),
+                              br(),
+                              column(2.5,span(textOutput('thanks'),style="color:blue"))
+                                    )
+                             
+                           )),
+                  
+                  
+                  
+                  
+###### GEOM TAB ######
                   tabPanel("geom_sf practice",
                            sidebarLayout(
                              sidebarPanel( shinyjs::useShinyjs(),
@@ -53,6 +95,42 @@ shinyApp(
    
   
   server = function(input,output,session){
+    
+    ############## INTRO STUFF #################
+
+    output$l<-renderLeaflet({
+      leaflet() %>% setView(lng = -79.0300287, lat = 41.8745644, zoom = 6) %>% addTiles() %>% 
+        addMarkers(lat = mdata$latt, lng = mdata$lngg, label = mdata$labell, popup =mdata$popupp)
+    })
+    output$latlong<-renderText({'Click somewhere on the map!'})
+    
+    ## SELECTS BASEMAP
+    observe({
+      leafletProxy('l')%>% addProviderTiles(providers[[input$base]])
+    })
+    
+    
+    ## Gets/prints Lat/Long
+    observeEvent(input$l_click,{
+      click<<-input$l_click
+      optxt<-paste("Lat: ", click$lat,",", "Long: ", click$lng)
+      output$latlong<-renderText({optxt})
+    })
+    # Adds marker on click of button
+      observeEvent(input$but,{
+
+        tobind<-data.frame(latt=click$lat,lngg=click$lng,labell=input$name,popupp=input$mess, stringsAsFactors=FALSE)
+ 
+        mdata<-rbind(mdata,tobind)
+        saveRDS(mdata,'introdata/markers.rds')
+        leafletProxy('l')%>%addMarkers(lat = tobind$latt, lng = tobind$lngg, label = tobind$labell, popup =tobind$popupp)
+        output$thanks<-renderText({'Thank you for participating!'})
+      
+    })
+    
+
+    
+    ############## GEOM STUFF #################
     withProgress(message = 'Loading data', value = 1, {
       
       growth_cent <- st_read("ridata/growth06.shp")
