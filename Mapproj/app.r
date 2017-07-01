@@ -3,11 +3,13 @@ library(shiny)
 library(sf)
 library(ggplot2)
 library(dplyr)
-library(httr)
 library(leaflet)
 library(shinyjs)
-mdata<-readRDS('introdata/markers.rds')
-
+library(aws.s3)
+library(markdown)
+Sys.setenv("AWS_ACCESS_KEY_ID" = "",
+           "AWS_SECRET_ACCESS_KEY" = "/")
+s3load("markers.RData", bucket = "maxmarkerdata")
 options(shiny.sanitize.errors = FALSE)
 
 
@@ -53,6 +55,12 @@ shinyApp(
                   
                   
                   
+                  ###### Map TAB ######
+                  tabPanel("GIS in R",
+                           fluidPage(
+                             titlePanel("Creating Analytical Maps in R"),
+                             includeMarkdown('az.md')
+                           )),
                   
 ###### GEOM TAB ######
                   tabPanel("geom_sf practice",
@@ -122,7 +130,7 @@ shinyApp(
         tobind<-data.frame(latt=click$lat,lngg=click$lng,labell=input$name,popupp=input$mess, stringsAsFactors=FALSE)
  
         mdata<-rbind(mdata,tobind)
-        saveRDS(mdata,'introdata/markers.rds')
+        s3save(mdata, bucket = "maxmarkerdata", object = "markers.RData")
         leafletProxy('l')%>%addMarkers(lat = tobind$latt, lng = tobind$lngg, label = tobind$labell, popup =tobind$popupp)
         output$thanks<-renderText({'Thank you for participating!'})
       
@@ -132,7 +140,7 @@ shinyApp(
     
     ############## GEOM STUFF #################
     withProgress(message = 'Loading data', value = 1, {
-      
+#s3load('sfdata.RData',bucket = 'smallaz')      
       growth_cent <- st_read("ridata/growth06.shp")
       streams <- st_read("ridata/streams.shp")
       muni <- st_read("ridata/muni97d.shp")
