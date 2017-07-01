@@ -1,6 +1,6 @@
 ##Pollinator suitability by Max Pohlman
 
-## This script creates the map located at .
+## This script creates the map located at https://maxpohlman.shinyapps.io/mapproj/ (GIS in R tab).
 ## All the data is downloaded within this script.
 
 #Required Packages
@@ -260,20 +260,21 @@ bb<-sum(aa, na.rm=T)
 tankw<-st_buffer(tank, 0.002745946, nQuadSegs = 500)
 tankz<-tankw %>% st_intersection(muni)
 bb <- focal(bb, w=matrix(1, 3, 3), mean)
+
 #######################################
 # Plots the map                       #
 #######################################
 bg <- mask(bb,muniq, inverse = T)
 offset<-.0015
-plot(bb, legend.args=list(text='Suitability Score', side = 4 ,cex = 1.3, line = 2))
-plot(bg,add=T, col='white', legend = F)
-plot(tankz, col = 'red', border = 'red',add=T)
-for(i in 1:length(coordinates(tankq))/2){
+plot(bb, legend.args=list(text='Suitability Score', side = 4 ,cex = 1.3, line = 2)) #plots raster
+plot(bg,add=T, col='white', legend = F) #makes background white
+plot(tankz, col = 'red', border = 'red',add=T) #plot leak areas
+for(i in 1:length(coordinates(tankq))/2){ # only plot hazard icons where they'll stay within the boundaries
   if(gContainsProperly(muniq,gBuffer(tankq[i,], width =.0015, quadsegs = 50 ))){
     rasterImage(icon4,coordinates(tankq)[i,1]-offset, coordinates(tankq)[i,2]-offset, coordinates(tankq)[i,1]+offset, coordinates(tankq)[i,2]+offset)
   }      
 }
-plot(muniq, add=T)
+plot(muniq, add=T) #plot town line
 x<- -71.45
 y<- 41.61
 rasterImage(icon4,x-offset,y-offset,x+offset,y+offset )
@@ -284,4 +285,4 @@ title(main = "Plant Here, Save the Bees\nEast Greenwhich, Rhode Island",
 coffset<-.008
 cx<- -71.45
 cy<- 41.625
-rasterImage(comp,cx-coffset,cy-coffset,cx+coffset,cy+coffset)
+rasterImage(comp,cx-coffset,cy-coffset,cx+coffset,cy+coffset) #adds compass
