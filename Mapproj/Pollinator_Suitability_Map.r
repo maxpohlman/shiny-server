@@ -255,12 +255,11 @@ comp<-rotate(comp,357,bg.col="white")
 #######################################
 # Compresses layers into one raster   #
 #######################################
-
 aa<-brick(devr,eler,lulcr,roadr,soilr)
 bb<-sum(aa, na.rm=T)
 tankw<-st_buffer(tank, 0.002745946, nQuadSegs = 500)
 tankz<-tankw %>% st_intersection(muni)
-
+bb <- focal(bb, w=matrix(1, 3, 3), mean)
 #######################################
 # Plots the map                       #
 #######################################
