@@ -1,9 +1,16 @@
+##Growth Center Land Use by Max Pohlman
+
+## This script creates the map located at https://maxpohlman.shinyapps.io/mapproj/ (Visualizing Land Usage tab).
+## All the data is downloaded within this script.
+
+#Required packages
 library(sf)
 library(leaflet)
 library(htmltools)
 library(RColorBrewer)
 library(dplyr)
 
+#Downloads the data
 if(!dir.exists("growthdata")){dir.create("growthdata")}
 download.file(url = 'http://www.rigis.org/geodata/plan/rilc11d.zip',
               destfile = "growthdata/a.zip")
@@ -47,12 +54,11 @@ icons <- awesomeIcons(
   iconColor = '#4eff3a',
   library = 'fa',
   markerColor = 'red'
-)
-
+                      )
 labels <- sprintf(
   "<strong>%s</strong><br/>%g acres",
   gcp$Descr_2011, gcp$area
-) %>% lapply(htmltools::HTML)
+                  ) %>% lapply(htmltools::HTML)
 
 
 

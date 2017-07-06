@@ -1,6 +1,6 @@
 ##Pollinator suitability by Max Pohlman
 
-## This script creates the map located at https://maxpohlman.shinyapps.io/mapproj/ (GIS in R tab).
+## This script creates pollinator suitability map located at https://maxpohlman.shinyapps.io/mapproj/ (GIS mapping in R tab).
 ## All the data is downloaded within this script.
 
 #Required Packages
