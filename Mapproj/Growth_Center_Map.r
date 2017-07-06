@@ -1,3 +1,9 @@
+library(sf)
+library(leaflet)
+library(htmltools)
+library(RColorBrewer)
+library(dplyr)
+
 if(!dir.exists("growthdata")){dir.create("growthdata")}
 download.file(url = 'http://www.rigis.org/geodata/plan/rilc11d.zip',
               destfile = "growthdata/a.zip")
@@ -33,13 +39,16 @@ for (i in 3:length(op))
 }
 
 #Icons, colors, labels
-factpal <- colorFactor(topo.colors(37),growthx$Descr_2011)
+qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+factpal <- colorFactor(col_vector[1:37],growthx$Descr_2011)
 icons <- awesomeIcons(
   icon = 'leaf',
   iconColor = '#4eff3a',
   library = 'fa',
   markerColor = 'red'
 )
+
 labels <- sprintf(
   "<strong>%s</strong><br/>%g acres",
   gcp$Descr_2011, gcp$area
