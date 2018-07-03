@@ -38,6 +38,7 @@ ui <- fluidPage( shinyjs::useShinyjs(),
 server <- function(input, output, session) {
   source('functions.R')
   
+  pdf(NULL)
   
   hospitals <- readRDS('hospitals.rds')
   dist_matrix <- readRDS('distance_matrix.rds')
