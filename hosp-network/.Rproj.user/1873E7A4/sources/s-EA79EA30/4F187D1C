@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1530539220537.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4F187D1C",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1530539220537,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "34EAE175",
+        "caption" : "target_points %>% group_by(names) %>% mutate(tot = sum(`Patients Received`))",
+        "contentUrl" : "grid_resource/gridviewer.html?env=_rs_no_env&obj=&cache_key=34EAE175",
+        "displayedObservations" : 41,
+        "environment" : "_rs_no_env",
+        "object" : "",
+        "preview" : 0,
+        "totalObservations" : 41,
+        "variables" : 7
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

@@ -1,0 +1,120 @@
+##BACKUP 
+
+library(sf)
+library(shiny)
+library(spData)
+library(leaflet)
+library(tidyverse)
+library(shinyjs)
+
+# Define UI for application that draws a histogram
+ui <- fluidPage( shinyjs::useShinyjs(),
+                 
+                 # Application title
+                 titlePanel("Title"),
+                 
+                 # Sidebar with a slider input for number of bins 
+                 sidebarLayout(
+                   sidebarPanel(
+                     checkboxInput('showall', 'Show all hospitals', value = T),
+                     uiOutput('hospselector'),
+                     actionButton('anibutton', 'Do Stuff')),
+                   
+                   # Show a plot of the generated distribution
+                   mainPanel(
+                     leafletOutput("l")
+                   )
+                 )
+)
+
+# Define server logic required to draw a histogram
+server <- function(input, output, session) {
+  source('functions.R')
+  
+  
+  hospitals <- readRDS('hospitals.rds')
+  dist_matrix <- readRDS('distance_matrix.rds')
+  icon_1 <-makeIcon('./icons/1.png')
+  
+  output$hospselector <- renderUI({
+    selectInput("hospselector", 'Choose a Hospital', choices =sort(unique(hospitals$names)) )
+  })
+  
+  output$l <- renderLeaflet({
+    
+    leaflet() %>% 
+      setView(lng = -71.5820372, lat = 42.1770196, zoom = 8) %>%
+      addProviderTiles(providers$OpenStreetMap.Mapnik)
+  })
+  
+  observeEvent(input$hospselector,{
+    leafletProxy('l') %>%
+      clearShapes() %>%
+      clearMarkers() %>%
+      addMarkers(data = hospitals, icon = icon_1, label = hospitals$names)
+  })
+  
+  observe({
+    if (input$showall == T){
+      
+      
+      shinyjs::disable('anibutton')
+      
+      req(input$hospselector)
+      shinyjs::disable('hospselector')
+      
+      
+    }
+    
+    if (input$showall == F){
+      leafletProxy('l') %>%
+        clearMarkers()
+      
+      shinyjs::enable('anibutton')
+      shinyjs::enable('hospselector')
+      or <-filter(hospitals, names == input$hospselector)
+      leafletProxy('l')  %>%
+        addMarkers(data = or, icon = icon_1, label = or$names)
+      
+      
+    }
+    
+    dummy <- reactiveValues(my_dummy = 0)
+    
+    
+    observeEvent(input$anibutton,{
+      dummy$my_dummy <-0
+      
+      leafletProxy('l') %>% clearMarkers() %>% clearShapes()
+      
+      network<-network_link(hospitals, input$hospselector , 500, dist_matrix)
+      leafletProxy('l') %>%
+        addMarkers(data = network$origin_point) %>%
+        addMarkers(data = network$target_points)
+      browser()
+      observe({
+        isolate({
+          dummy$my_dummy <- dummy$my_dummy +1
+        })
+        
+        if (isolate(dummy$my_dummy) <= nrow(network$lines)){
+          leafletProxy('l') %>%
+            addPolylines(data = network$lines[dummy$my_dummy,])
+          invalidateLater(100, session)
+          
+        }
+        
+        if (isolate(dummy$my_dummy) == nrow(network$lines)){
+        }
+      })
+      
+    })
+    
+    #, icon = ~makeIcon(paste0('./icons/',network$target_points$map_icon,'.png'))
+    
+  })
+}
+
+# Run the application 
+shinyApp(ui = ui, server = server)
+

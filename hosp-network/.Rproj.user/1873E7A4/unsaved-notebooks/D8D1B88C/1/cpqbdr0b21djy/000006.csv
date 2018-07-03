@@ -1,0 +1,6 @@
+"0","  origin_point<-hospitals %>%"
+"0","    filter(names == 'Arbour Hospital')"
+"0","  target_names <- close_checker(origin = origin_point$names, distance_matrix = dist_matrix, count = 5) %>% select(target)"
+"0","  target_points <- hospitals %>%"
+"0","    filter(names %in% target_names$target)"
+"0","    "

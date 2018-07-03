@@ -1,0 +1,30 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+  origin_point<-hospitals %>%
+    filter(names == 'Arbour Hospital')
+
+  target_names <- close_checker(origin = origin_point$names, distance_matrix = dist_matrix, count = 5)
+
+  target_points <- hospitals %>%
+    filter(names %in% target_names$target)
+  
+  target_lines <- target_names %>%
+    mutate(ls = pmap())
+    
+  
+  
+
+
+
+
+
+```
+

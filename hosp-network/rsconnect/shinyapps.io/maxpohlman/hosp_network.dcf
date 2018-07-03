@@ -1,0 +1,12 @@
+name: hosp_network
+title: hosp_network
+username:
+account: maxpohlman
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 372086
+bundleId: 1461158
+url: https://maxpohlman.shinyapps.io/hosp_network/
+when: 1530551579.40639
+asMultiple: FALSE
+asStatic: FALSE

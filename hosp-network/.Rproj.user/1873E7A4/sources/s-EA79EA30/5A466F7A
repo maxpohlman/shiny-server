@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1530277231220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "5A466F7A",
+    "lastKnownWriteTime" : 1530551202,
+    "last_content_update" : 1530551202964,
+    "path" : "~/hosp-network/app.R",
+    "project_path" : "app.R",
+    "properties" : {
+        "cursorPosition" : "14,52",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
