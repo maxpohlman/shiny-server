@@ -128,7 +128,9 @@ server <- function(input, output, session) {
        
        leafletProxy('l') %>% clearMarkers() %>% clearShapes() %>% clearControls() 
 
-       target_labels <- make_target_labels(network_data()$target_points)
+       target_labels <- network_data()$target_points %>%
+         mutate(outgoing_patients = `Total Patients Received` - `Patients Stayed`) %>%
+         make_target_labels()
        
        leafletProxy('l') %>%
          addMarkers(data = network_data()$origin_point, icon = icon_1, label = network_data()$origin_point$names) %>%
