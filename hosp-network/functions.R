@@ -156,12 +156,13 @@ make_line_label <- function(index, df){
 
 make_target_labels <- function(df){
   
-
+  df<-df %>% mutate(outgoing_transfer = `Total Patients Received` - `Patients Stayed`)
   
   label<- sprintf(
     "<strong>Hospital Name:</strong> %s<br/> <strong>Patients Received:</strong> %s<br/> <strong>Patients Discharged to Home:</strong> %s<br/> <strong>Patients Transferred Further:</strong> %s</sup>",
-    df$names, df[['Total Patients Received']], df[['Patients Stayed']], df$outgoing_patients
+    df$names, df[['Total Patients Received']], df[['Patients Stayed']], df$outgoing_transfer
   )%>% lapply(htmltools::HTML)
+  
   return(label)
   
 }

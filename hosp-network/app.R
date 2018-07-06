@@ -25,6 +25,7 @@ ui <- fluidPage( shinyjs::useShinyjs(),
           actionButton('anibutton', 'Create Network'),
         br(),
         p('CURRENT BUGS:'),
+        p('- If all the hospitals reappear after choosing one, check and uncheck the "show all hospitals" button'),
         p('- Selecting a new hospital immediately reconstructs the network w/o waiting for the user to click the button again')),
       
       # Show a plot of the generated distribution
@@ -38,7 +39,6 @@ ui <- fluidPage( shinyjs::useShinyjs(),
 server <- function(input, output, session) {
   source('functions.R')
   
-  pdf(NULL)
   
   hospitals <- readRDS('hospitals.rds')
   dist_matrix <- readRDS('distance_matrix.rds')
@@ -129,9 +129,7 @@ server <- function(input, output, session) {
        
        leafletProxy('l') %>% clearMarkers() %>% clearShapes() %>% clearControls() 
 
-       target_labels <- network_data()$target_points %>%
-         mutate(outgoing_patients = `Total Patients Received` - `Patients Stayed`) %>%
-         make_target_labels()
+       target_labels <- make_target_labels(network_data()$target_points)
        
        leafletProxy('l') %>%
          addMarkers(data = network_data()$origin_point, icon = icon_1, label = network_data()$origin_point$names) %>%
