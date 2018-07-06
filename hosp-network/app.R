@@ -25,7 +25,6 @@ ui <- fluidPage( shinyjs::useShinyjs(),
           actionButton('anibutton', 'Create Network'),
         br(),
         p('CURRENT BUGS:'),
-        p('- If all the hospitals reappear after choosing one, check and uncheck the "show all hospitals" button'),
         p('- Selecting a new hospital immediately reconstructs the network w/o waiting for the user to click the button again')),
       
       # Show a plot of the generated distribution
@@ -63,15 +62,12 @@ server <- function(input, output, session) {
      
      leaflet() %>% 
        setView(lng = -71.5820372, lat = 42.1770196, zoom = 8) %>%
-       addProviderTiles(providers$OpenStreetMap.Mapnik)
+       addProviderTiles(providers$OpenStreetMap.Mapnik) %>%
+       addMarkers(data = hospitals, icon = makeIcon('./icons/hospital_icon_2.gif', iconWidth = 20, iconHeight = 20), label = hospitals$names, options = markerOptions(riseOnHover = TRUE))
+     
    })
    
-   observeEvent(input$hospselector,{
-     leafletProxy('l') %>%
-       clearShapes() %>%
-       clearMarkers() %>%
-       addMarkers(data = hospitals, icon = makeIcon('./icons/hospital_icon_2.gif', iconWidth = 20, iconHeight = 20), label = hospitals$names, options = markerOptions(riseOnHover = TRUE))
-   })
+
    
    observe({
      if (input$showall == T){
@@ -83,6 +79,11 @@ server <- function(input, output, session) {
        shinyjs::disable('num_patient')
        req(input$hospselector)
        shinyjs::disable('hospselector')
+       
+       leafletProxy('l') %>%
+         clearShapes() %>%
+         clearMarkers() %>%
+         addMarkers(data = hospitals, icon = makeIcon('./icons/hospital_icon_2.gif', iconWidth = 20, iconHeight = 20), label = hospitals$names, options = markerOptions(riseOnHover = TRUE))
        
        
      }
