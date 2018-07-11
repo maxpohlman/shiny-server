@@ -37,7 +37,7 @@ ui <- fluidPage( shinyjs::useShinyjs(),
 # Define server logic required to draw a histogram
 server <- function(input, output, session) {
   source('functions.R')
-  
+  pdf(NULL)
   
   hospitals <- readRDS('hospitals.rds')
   dist_matrix <- readRDS('distance_matrix.rds')
