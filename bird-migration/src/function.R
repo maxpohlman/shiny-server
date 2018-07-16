@@ -97,3 +97,33 @@ make_middle_line <- function(){
   return(df)
 }
 
+get_line_color <- function(n){
+  between <- function(x, a, b) a < x && x <= b
+  
+  dplyr::case_when(
+    between(n, 0, 5) ~'#0765ff',
+    between(n, 5, 10)~'#003ea3',
+    between(n, 10, 15) ~'#003ea3',
+    between(n, 15, 20) ~'#00ff0c',
+    between(n, 20, 25) ~'#00ff0c',
+    between(n, 25, 30) ~'#03c413',
+    between(n, 30, 35) ~'#03c413',
+    between(n, 35, 40) ~'#008c06',
+    between(n, 40, 45) ~'#008c06',
+    between(n, 45, 50) ~'#ff8484',
+    between(n, 50, 55) ~'#ff8484',
+    between(n, 55, 60) ~'#ff0000',
+    between(n, 60, 65) ~'#ff0000',
+    between(n, 65, 70) ~'#af0000',
+    between(n, 70, 75) ~'#af0000',
+    between(n, 76, 80) ~'#ffcb00',
+    between(n, 80, 85) ~'#ffcb00',
+    between(n, 85, 90) ~'#a58b24',
+    between(n, 90, 95) ~'#a58b24',
+    between(n, 95, 100) ~'#595828',
+    between(n, 100, 105) ~'#595828',
+    between(n, 105, 110) ~'#72a7ff',
+    between(n, 110, 115) ~'#72a7ff',
+    between(n,115, 120) ~'#0765ff',
+  )
+}

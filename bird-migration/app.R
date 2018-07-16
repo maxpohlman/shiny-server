@@ -10,7 +10,7 @@ library(shinythemes)
 
 # Define UI for application that draws a histogram
 ui <- navbarPage( "Bird Migration Map", theme = shinytheme("cerulean"),
-                  tabPanel(HTML("Map</a></li><li><a href=\"http://maxpohlman.com\">Back to my Website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/Mapproj/app.r\">View Source Code"),        
+                  tabPanel(HTML("Map</a></li><li><a href=\"http://maxpohlman.com\">Back to my Website</a></li><li><a href=\"https://github.com/maxpohlman/shiny-server/blob/master/bird-migration/app.R\">View Source Code"),        
   fluidPage( shinyjs::useShinyjs(),
    
    # Application title
@@ -19,12 +19,20 @@ ui <- navbarPage( "Bird Migration Map", theme = shinytheme("cerulean"),
    # Sidebar with a slider input for number of bins 
    sidebarLayout(
       sidebarPanel(
+        p("This interactive map hopes to answer the above question. I scraped 
+        over 570,000 confirmed American bird sightings from ", a(href = "inaturalist.org","iNaturalist.org"),
+        "and compiled them together into this app."),p("Select a bird from the menu below, then choose to display either data in a given month or
+          the average location of the bird in each month. The 'Draw Migration Path' will animate an approximate migration route for the bird, based on the observations
+          made by users on iNaturalist."),
         uiOutput('birdname'),
-        checkboxInput('split', 'Split country in half for averages (NFI)', value = T),
+        checkboxInput('split', 'Split country in half for averages (NFI)*', value = T),
         checkboxInput('month', 'Display Monthly Data'),
         uiOutput('birdmonth'),
         checkboxInput('average', 'Display Avg Monthly Location'),
-        actionButton('but', 'Draw Migration Path')
+        actionButton('but', 'Draw Migration Path'),
+        radioButtons('linecol','Choose Migration Path Color', c('Seasonal', 'Black'), selected = 'Seasonal'),
+        p("* The reason why the country is split for birds that appear on both halves of the country is in attempt to improve accuracy of coastal birds.
+          If a bird is only found on the east/west coast, an average would place it in the midwest, which would be inaccurate.")
         
       ),
       
@@ -159,10 +167,15 @@ observeEvent(input$but, {
   
   shinyjs::disable('but')
   shinyjs::disable('b_name')
+  shinyjs::disable('linecol')
   
   dummy <- reactiveValues(my_dummy = 0)
   
-  leafletProxy("l") %>% clearGroup('avgline_l') %>% clearGroup('avgline_r')
+  leafletProxy("l") %>% clearGroup('avgline_l') %>% clearGroup('avgline_r') 
+  if(input$linecol == 'Seasonal'){
+  leafletProxy('l') %>% clearControls() %>% addLegend(pal = pal, values = df$month, position = 'bottomright')
+  }
+  
     observe({
       isolate({
         dummy$my_dummy <- dummy$my_dummy +1
@@ -170,24 +183,34 @@ observeEvent(input$but, {
       
       if (is.null(avg_frame()$left_count) == F){
         val <- avg_frame()$left_count
+        
       } else{
         val <- avg_frame()$right_count
+        
       }
       
       if (isolate(dummy$my_dummy) <= isolate(val)){
         if (is.null(avg_frame()$left_count) == F){
-          leafletProxy("l")  %>% addPolylines(data = avg_frame()$left_lines[dummy$my_dummy,], group = 'avgline_l', color = 'black')
+          leafletProxy("l")  %>% addPolylines(data = avg_frame()$left_lines[dummy$my_dummy,], group = 'avgline_l', color = ifelse(input$linecol == 'Seasonal', get_line_color(dummy$my_dummy), 'black') )
         }
         if (is.null(avg_frame()$right_count) == F){
-          leafletProxy("l")  %>% addPolylines(data = avg_frame()$right_lines[dummy$my_dummy,], group = 'avgline_l', color = 'black')
+          leafletProxy("l")  %>% addPolylines(data = avg_frame()$right_lines[dummy$my_dummy,], group = 'avgline_l', color = ifelse(input$linecol == 'Seasonal', get_line_color(dummy$my_dummy), 'black'))
         }
         
         invalidateLater(100, session)
         
       }
+      if(isolate(dummy$my_dummy == 1)){
+        if (is.null(avg_frame()$right_count) == F & is.null(avg_frame()$left_count) == F){
+          mid <- make_middle_line()
+          leafletProxy("l") %>% 
+            addPolylines(data = mid, color = 'black', group = 'midline_but', opacity = 1)
+        }
+      }
       if(isolate(dummy$my_dummy) == isolate(val)){
         shinyjs::enable('but')
         shinyjs::enable('b_name')
+        shinyjs::enable('linecol')
       }
     })
 })
@@ -201,21 +224,11 @@ observeEvent(input$but, {
   })
   
   observeEvent(input$b_name,{
-    leafletProxy('l') %>% clearGroup('avgline_l') %>% clearGroup('avgline_r')
+    leafletProxy('l') %>% clearGroup('avgline_l') %>% clearGroup('avgline_r') %>% clearGroup('midline_but')
     
     if(input$average){
       
       leafletProxy('l') %>% clearGroup('avg_l') %>% clearGroup('avg_r') %>%clearGroup('midline')
-
-      avg_icon <- awesomeIcons(
-        icon = 'ion-logo-twitter',
-        iconColor = 'black',
-        library = 'ion',
-        markerColor = 'red'
-      )
-      
-
-      
       
       all<-filter(df, common_name == input$b_name) 
       
@@ -243,7 +256,7 @@ observeEvent(input$but, {
         if(nrow(left) > 0){
           mid <- make_middle_line()
           leafletProxy("l") %>% 
-            addPolylines(data = mid, color = 'black', group = 'midline')
+            addPolylines(data = mid, color = 'black', group = 'midline', opacity = 1)
         }
         
       }
@@ -310,14 +323,7 @@ observeEvent(input$but, {
     
     if(input$average){
       
-      
-      avg_icon <- awesomeIcons(
-        icon = 'ion-logo-twitter',
-        iconColor = 'black',
-        library = 'ion',
-        markerColor = 'red'
-      )
-      
+      leafletProxy('l') %>% clearControls() %>% addLegend(pal = pal, values = df$month, position = 'bottomright')
       
       all<-filter(df, common_name == input$b_name) 
       
@@ -345,7 +351,7 @@ observeEvent(input$but, {
         if(nrow(left) > 0){
           mid <- make_middle_line()
           leafletProxy("l") %>% 
-            addPolylines(data = mid, color = 'black', group = 'midline')
+            addPolylines(data = mid, color = 'black', group = 'midline', opacity = 1)
         }       
       }
       
