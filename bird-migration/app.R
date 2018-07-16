@@ -28,7 +28,7 @@ ui <- navbarPage( "Bird Migration Map", theme = shinytheme("cerulean"),
         checkboxInput('split', 'Split country in half for averages (NFI)*', value = T),
         checkboxInput('month', 'Display Monthly Data'),
         uiOutput('birdmonth'),
-        checkboxInput('average', 'Display Avg Monthly Location'),
+        checkboxInput('average', 'Display Average Monthly Location'),
         actionButton('but', 'Draw Migration Path'),
         radioButtons('linecol','Choose Migration Path Color', c('Seasonal', 'Black'), selected = 'Seasonal'),
         p("* The reason why the country is split for birds that appear on both halves of the country is in attempt to improve accuracy of coastal birds.
