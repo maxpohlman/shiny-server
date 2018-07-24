@@ -79,7 +79,7 @@ server <- function(input, output, session) {
 
 
 avg_frame <- eventReactive(input$but,{
-
+  withProgress(message = 'Working...', min = .99, value = 1,{
   linestring_func_left <- function(origin, target){
     first <- left_l %>%
       filter(month == origin)
@@ -158,7 +158,7 @@ avg_frame <- eventReactive(input$but,{
   }
   
   list(left_lines = left_lines, right_lines = right_lines, left_count = nrow(left_lines), right_count = nrow(right_lines))
-
+})
 })
   
 
@@ -224,6 +224,8 @@ observeEvent(input$but, {
   })
   
   observeEvent(input$b_name,{
+    withProgress(message = 'Working...', min = .99, value = 1,{
+      
     leafletProxy('l') %>% clearGroup('avgline_l') %>% clearGroup('avgline_r') %>% clearGroup('midline_but')
     
     if(input$average){
@@ -270,12 +272,13 @@ observeEvent(input$but, {
       leafletProxy('l') %>% clearGroup(group = 'monthly') %>%
         addMarkers(data = monthly, popup = paste0("<img src = ",monthly$image_url, ' width="200" height="200">'), icon = mon_icon, group = 'monthly')
     }
-    
+    })
   })
   
   
   observeEvent(input$b_month,{
-
+    withProgress(message = 'Working...', min = .99, value = 1,{
+      
     if(input$month){
     monthly<-filter(df, common_name == input$b_name, month == input$b_month) 
     mon_icon <- makeIcon('src/bird_marker_small.png', iconAnchorX = 18, iconAnchorY = 53, popupAnchorY = 0)
@@ -283,13 +286,14 @@ observeEvent(input$but, {
     leafletProxy('l') %>% clearGroup(group = 'monthly') %>%
       addMarkers(data = monthly, popup = paste0("<img src = ",monthly$image_url, ' width="200" height="200">'), icon = mon_icon, group = 'monthly')
     }
+    })
   })
 
   #x 18 y 53
   
   
   observeEvent(input$month,{
-    
+    withProgress(message = 'Working...', min = .99, value = 1,{
     if(input$month){
       shinyjs::enable('b_month')
       
@@ -315,12 +319,12 @@ observeEvent(input$but, {
         ''
       }) 
     }
-    
+  })
   })
   
   
   observeEvent(input$average,{
-    
+    withProgress(message = 'Working...', min = .99, value = 1,{
     if(input$average){
       
       leafletProxy('l') %>% clearControls() %>% addLegend(pal = pal, values = df$month, position = 'bottomright')
@@ -368,7 +372,7 @@ observeEvent(input$but, {
         clearGroup(group = 'midline')
       
     }
-    
+    })
   })
   
 
