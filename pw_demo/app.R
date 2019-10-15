@@ -1,13 +1,13 @@
-options(googleAuthR.scopes.selected = c("https://www.googleapis.com/auth/userinfo.email",
-                                        "https://www.googleapis.com/auth/userinfo.profile"))
-options("googleAuthR.webapp.client_id" = Sys.getenv('CLIENT_ID'))
-options("googleAuthR.webapp.client_secret" = Sys.getenv('CLIENT_SECRET'))
-
 library(shiny)
 library(shinyjs)
 library(googleAuthR)
 library(googleID)
 library(tidyverse)
+
+options(googleAuthR.scopes.selected = c("https://www.googleapis.com/auth/userinfo.email",
+                                        "https://www.googleapis.com/auth/userinfo.profile"))
+options("googleAuthR.webapp.client_id" = read_file('clientid.txt'))
+options("googleAuthR.webapp.client_secret" = read_file('clientsecret.txt'))
 # Define UI for application that draws a histogram
 ui <- fluidPage( useShinyjs(),
    actionButton('debug','debug'),
@@ -24,6 +24,8 @@ server <- function(input, output, session) {
   rv <- reactiveValues(
     login = FALSE
   )
+  
+  approved <- read_file('approvedusers.txt')
   
   logstatus <- reactiveVal('notlogged')
   
@@ -49,7 +51,7 @@ server <- function(input, output, session) {
   
   observe({
     req(useremail())
-    if(str_detect(Sys.getenv('APPROVED_USERS'),paste0('B',useremail(),'A'))){
+    if(str_detect(approved,paste0('B',useremail(),'A'))){
       logstatus('success')
     } else{
       logstatus('fail')
