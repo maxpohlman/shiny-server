@@ -14,8 +14,8 @@ library(leaflet)
 library(tidyverse)
 
 user_base <- data.frame(
-  user = Sys.getenv('BUFFER_USERNAME'),
-  password = Sys.getenv('BUFFER_PASSWORD'),
+  user = read_file('www/username.txt'),
+  password = read_file('www/password.txt'),
   stringsAsFactors = FALSE,
   row.names = NULL
 )
@@ -23,32 +23,32 @@ user_base <- data.frame(
 # Define UI for application that draws a histogram
 ui <- fluidPage(
   shinyjs::useShinyjs(),
-   # Application ti
-   # Sidebar with a slider input for number of bins 
+  # Application ti
+  # Sidebar with a slider input for number of bins 
   actionButton('debug','debug'),
   div(class = "pull-right", logoutUI(id = "logout")),
   # add login panel UI function
   loginUI(id = "login"),
   hidden(div(id = 'page',
-   sidebarLayout(
-      sidebarPanel(
-        p('Map options will go here'),
-         checkboxGroupInput("bins",
-                     "Show specific buffer/bmp/locations/etc",
-                     choices = c('A','B','C'))
-      ),
-      
-      # Show a plot of the generated distribution
-      mainPanel(
-        p('Will edit the CSS to make the map larger/less greyspace'),
-         leafletOutput('m')
-      )
-   )
-)
-))
+             sidebarLayout(
+               sidebarPanel(
+                 p('Map options will go here'),
+                 checkboxGroupInput("bins",
+                                    "Show specific buffer/bmp/locations/etc",
+                                    choices = c('A','B','C'))
+               ),
+               
+               # Show a plot of the generated distribution
+               mainPanel(
+                 p('Will edit the CSS to make the map larger/less greyspace'),
+                 leafletOutput('m')
+               )
+             )
+  )
+  ))
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-   
+  
   logout_init <- callModule(shinyauthr::logout, 
                             id = "logout", 
                             active = reactive(credentials()$user_auth))
@@ -74,10 +74,10 @@ server <- function(input, output) {
     }
   })
   
-   output$m <- renderLeaflet({
-      leaflet() %>%
-       addTiles()
-   })
+  output$m <- renderLeaflet({
+    leaflet() %>%
+      addTiles()
+  })
 }
 
 # Run the application 
