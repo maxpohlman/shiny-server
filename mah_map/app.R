@@ -14,8 +14,8 @@ library(leaflet)
 library(tidyverse)
 
 user_base <- data.frame(
-  user = read_file('www/username.txt'),
-  password = read_file('www/password.txt'),
+  user = read_file('username.txt'),
+  password = read_file('password.txt'),
   stringsAsFactors = FALSE,
   row.names = NULL
 )
