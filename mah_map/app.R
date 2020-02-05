@@ -25,7 +25,6 @@ ui <- fluidPage(
   shinyjs::useShinyjs(),
   # Application ti
   # Sidebar with a slider input for number of bins 
-  actionButton('debug','debug'),
   div(class = "pull-right", logoutUI(id = "logout")),
   # add login panel UI function
   loginUI(id = "login"),
