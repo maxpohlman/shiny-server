@@ -174,6 +174,8 @@ server <- function(input, output, session) {
     shinyjs::disable('but')
     shinyjs::disable('b_name')
     shinyjs::disable('linecol')
+    shinyjs::disable('month')
+    shinyjs::disable('average')
     req(avg_frame())
     dummy <- reactiveValues(my_dummy = 0)
 
@@ -217,6 +219,8 @@ server <- function(input, output, session) {
         shinyjs::enable('but')
         shinyjs::enable('b_name')
         shinyjs::enable('linecol')
+        shinyjs::enable('month')
+        shinyjs::enable('average')
       }
     })
   })
