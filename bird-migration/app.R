@@ -30,7 +30,7 @@ ui <- navbarPage( "Bird Migration Map", theme = shinytheme("cerulean"),
         actionButton('but', 'Draw Migration Path'),
         radioButtons('linecol','Choose Migration Path Color', c('Seasonal', 'Black'), selected = 'Seasonal'),
         p("* The reason why the country is split for birds that appear on both halves of the country is in attempt to improve accuracy of coastal birds.
-          If a bird is only found on the east/west coast, an average would place it in the midwest, which would be inaccurate."), actionButton('b','browser')
+          If a bird is only found on the east/west coast, an average would place it in the midwest, which would be inaccurate.")
         
       ),
       
@@ -56,7 +56,6 @@ server <- function(input, output, session) {
     df<-read_rds("src/all_months.rds") %>% ungroup() %>% dplyr::select(common_name, month, image_url, lat, lng)
     
   })
-  observeEvent(input$b, {browser()})
   seasonal_pal <- c('#0765ff','#003ea3','#00ff0c','#03c413', '#008c06', '#ff8484',
     '#ff0000',
     '#af0000',
