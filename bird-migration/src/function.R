@@ -48,7 +48,7 @@ line_subsetter <- function(geom, origin, target, interval = 5){
   lsdf<- lsdf %>%
     mutate(test = map(2:(interval+1), ~st_linestring(ls_matrix[(.-1):.,])))
   
-  output <- st_sf(start = rep(origin, interval),  end = rep(target, interval), geometry = st_sfc(lsdf$test, crs = 4326), dim = 'XY', row.names = NULL)
+  output <- st_sf(start = rep(origin, interval),  end = rep(target, interval), geometry = st_as_sfc(lsdf$test, crs = 4326))
   
   
   return(output)
@@ -85,16 +85,15 @@ beta <- function(bf, origin, target){
 }
 
 make_middle_line <- function(){
-  
   clineone<-tibble(lng = c(-98.583333,-98.583333),
                    lat = c(48.88, 26.50))
   
   clinetwo<-st_as_sf(clineone, coords = c('lng', 'lat'))
   
   clinethree<-clinetwo %>% st_coordinates() %>% st_linestring() %>% st_sfc(crs = 4326)
-  df<-st_sf(id = 'middle_line', geometry = clinethree, dim = 'XY', row.names = NULL)
+  #df<-st_sf(id = 'middle_line', geometry = clinethree, dim = 'XY', row.names = NULL)
   
-  return(df)
+  return(clinethree)
 }
 
 get_line_color <- function(n){
