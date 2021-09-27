@@ -1,0 +1,17 @@
+﻿ID,scenarios,has_sr,has_mp,contract_length,Mean WTA,95% CI low,95% CI high,NPV mean WTA,NPV 95% CI low,NPV 95% CI high
+1,"SR, annual contract",Yes,No,Annual,43.63,33.04,57.63,43.63,33.04,57.63
+2,"SR, contract up to 20 years",Yes,No,Up to 20 Years,62.32,47.18,82.31,20.27,15.34,26.77
+3,"SR , contract up to 50 years",Yes,No,Up to 50 Years,88.94,67.34,117.48,11.57,8.76,15.29
+4,"SR, contract up to 100 years",Yes,No,Up to 100 Years,126.99,96.14,167.73,8.26,6.26,10.91
+5,"SR, MP, annual contract",Yes,Yes,Annual,118.06,89.38,155.94,118.06,89.38,155.94
+6,"SR, MP, contract up to 20 years",Yes,Yes,Up to 20 Years,168.56,127.62,222.64,54.82,41.50,72.40
+7,"SR, MP, contract up to 50 years",Yes,Yes,Up to 50 Years,240.66,182.21,317.88,31.32,23.71,41.36
+8,"SR, MP, contract up to 100 years",Yes,Yes,Up to 100 Years,343.61,260.15,453.85,22.36,16.93,29.53
+9,"EA, SR, annual contract",Yes,No,Annual,10.91,8.26,14.41,10.91,8.26,14.41
+10,"EA, SR, contract up to 20 years",Yes,No,Up to 20 Years,15.58,11.80,20.58,5.07,3.84,6.69
+11,"EA, SR , contract up to 50  years",Yes,No,Up to 50 Years,22.24,16.84,29.37,2.89,2.19,3.82
+12,"EA, SR, contract up to 100 years",Yes,No,Up to 100 Years,31.75,24.04,41.93,2.07,1.56,2.73
+13,"EA, SR, MP, annual contract",Yes,Yes,Annual,29.52,22.35,38.99,29.52,22.35,38.99
+14,"EA, SR, MP, contract up to 20 years",Yes,Yes,Up to 20 Years,42.14,31.91,55.66,13.70,10.38,18.10
+15,"EA, SR, MP, contract up to 50 years",Yes,Yes,Up to 50 Years,60.17,45.55,79.47,7.83,5.93,10.34
+16,"EA, SR, MP, contract up to 100 years",Yes,Yes,Up to 100 Years,85.90,65.04,113.46,5.59,4.23,7.38
