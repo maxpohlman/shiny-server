@@ -88,14 +88,21 @@ ui <- dashboardPage(
                     fluidRow(
                         box(width = 8,
                             h2('Forest Carbon Market Assessment and Planning Tool (FCMAP)', align = 'center'),
-                            h4("Some more text describing the tool, maybe some guidance to the user, maybe some links, sky's the limit")
+                            p("FCMAP is a simple calculator for family forest owners considering enrollment in a forest carbon market program. The value of carbon markets has steadily increased in recent years. However, the value of selling forest carbon compared to other forestland uses is not well understood by many forest owners. Comparing carbon prices with what most forest owners are willing to accept as payment can help you determine if, or when, carbon markets may be a good fit for your land management objectives."),
+                            p(strong("Data Sources:")," This tool uses data from multiple surveys to describe forest owner willingness to accept payment under different types of forest carbon contracts. It also uses data from the USDA Forest Inventory Analysis database to estimate the average amount of carbon sequestered by live trees per year on private forest lands in your state. The average rate of sequestration is an indicator of how much additional carbon could be stored per acre/year under certain management conditions. The additional carbon stored can then be valued using an assigned carbon price ($ dollars per metric ton). When the market price of carbon approaches values that are close to your preferred payment levels, it may be time to consider learning more about carbon market opportunities."),
+                            p(strong("Instructions:")),
+                            tags$ol(tags$li("Use the drop-down menu to describe the location of your forest (i.e., state) and the number of acres you own."),
+                            tags$li("Select which attributes you prefer in a forest carbon contract. Options include change in harvesting activities, adopting a management plan, and number of contract years."),
+                            tags$li("Select from a list of potential carbon prices to explore how changes in the carbon market may affect the value of carbon sequestration services on your land. Current mean prices range from $5 to $20 per metric ton. To understand more about carbon prices, click ", tags$a(href="http://www.google.com", "here."))
+                            )
                             ),
                         box(width = 4,
-                            selectInput('fcmap_state', 'State', state.name, 'Pennsylvania'),
-                            radioButtons('fcmap_multimanagement', 'Do you have multiple management objectives?', c('Yes', 'No'), 'Yes', inline = T),
-                            radioButtons('fcmap_managementplan', 'Do you have a management plan?', c('Yes', 'No'), 'Yes', inline = T),
-                            radioButtons('fcmap_acresowned', 'Acres Owned Category', c('<40 acres','40-99 acres', '100-250 acres', '>250 acres' ), '100-250 acres', inline = T),
-                            selectInput('fcmap_contractlength', 'Contract Length Preference', c('Very Short', 'Short', 'Medium', 'Long', 'Very Long'), 'Medium'),
+                            selectInput('fcmap_state', 'State', state.abb[state.abb != 'HI'], 'Pennsylvania'),
+                            radioButtons('fcmap_acresowned', 'Forest Acres Owned', c('<20 acres','20-99 acres', '100-249 acres', '250-1000 acres', '>1000 acres' ), '100-249 acres', inline = T),
+                            radioButtons('fcmap_harvestingpractice', 'Would you agree to changing your harvesting practices?', c('Yes', 'No'), 'Yes', inline = T),
+                            radioButtons('fcmap_managementplan', 'Would you agree to developing a management plan?', c('Yes', 'No'), 'Yes', inline = T),
+                            radioButtons('fcmap_contractlength', 'What is your preferred number of contract years?', c('No more than 1 year', 'Up to 20 years', 'Up to 50 years', 'Up to 100 years'), 'Up to 20 years'),
+                            selectInput('fcmap_carbonprice', 'Please select a market price for carbon ($/metric ton)', c('$5','$10','$20','$30','$40','$50','$60','$70','$80','$90','$100','$110','$120','$130','$140','$150'), '$80'),
                             bsTooltip("fcmap_managementplan", "A management plan is defined as a plan that one manages.", placement = 'left'),
                             bsTooltip("fcmap_acresowned", "Round to the nearest acre.", placement = 'left'),
                             fluidRow(column(width = 12, align = 'center', actionButton('runtool', 'Run Tool')))
@@ -104,8 +111,7 @@ ui <- dashboardPage(
                     ),
                     fluidRow(
                         box(width = 12, title = 'Tool Results',
-                               uiOutput('fcmap_table'),
-                            DTOutput('dttest')
+                               uiOutput('fcmap_table')
                             
                                )
                     )
@@ -140,6 +146,9 @@ server <- function(input, output) {
     set.seed(122)
   
     wta_df <- read_csv('wtadata.csv')
+    allowners <- read_csv('allowners.csv')
+    earlyadopters <- read_csv('earlyadopters.csv')
+    marketprices <- read_csv('marketprices.csv')
     water_quality_df <- tibble(County = counties,
                                `Value 1` = rnorm(length(counties)),
                                `Value 2` = rnorm(length(counties)),
@@ -156,20 +165,46 @@ server <- function(input, output) {
     )
     
     fcmap_result_table <- eventReactive(input$runtool, {
-        tibble(c1 = rnorm(1),
-               c2 = rnorm(1),
-               c3 = rnorm(1),
-               c4 = rnorm(1),
-               c5 = rnorm(1),
-               c6 = rnorm(1),
-               c7 = rnorm(1),
+      
+      mlow <- marketprices %>% 
+        filter(state == input$fcmap_state) %>% 
+        pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'low'))
+      
+      mhigh <- marketprices %>% 
+        filter(state == input$fcmap_state) %>% 
+        pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'high'))
+      
+      ao<- allowners %>%
+        filter(`ownership  size` == input$fcmap_acresowned) %>%
+        pull(input$fcmap_contractlength)
+      
+      ea<- earlyadopters %>%
+        filter(`ownership  size` == input$fcmap_acresowned) %>%
+        pull(input$fcmap_contractlength)
+      
+      ao_low <- as.numeric(str_extract(ao, '\\d+')) * .75 
+      ea_low <- as.numeric(str_extract(ea, '\\d+')) * .75 
+      
+      ao_high <- as.numeric(str_extract(ao, '\\d+')) * 1.25
+      ea_high <- as.numeric(str_extract(ea, '\\d+')) * 1.25 
+      
+        tibble(
                state = input$fcmap_state,
-               maxcolor = colors()[sample(1:length(colors()), 1)],
-               maxyear = paste0(sample(1:length(colors()), 1), ' years'),
-               maxpayment = paste0('$',sample(10:100, 1),'/year'),
-               melissapayment = paste0('$',sample(10:100, 1),'/year'),
-               melissayear = paste0(sample(1:length(colors()), 1), ' years'),
-               melissacolor = colors()[sample(1:length(colors()), 1)])
+               acres = input$fcmap_acresowned,
+               harvestingpractice = input$fcmap_harvestingpractice,
+               managementplan = input$fcmap_managementplan,
+               contractlength = input$fcmap_contractlength,
+               mlow = mlow,
+               mhigh = mhigh,
+               allown = ao,
+               earlyadopt = ea,
+               ao_low = ao_low,
+               ao_high = ao_high,
+               ea_low = ea_low,
+               ea_high = ea_high
+               
+        )
+               
     })
     
     wta_result_table <- eventReactive(input$runwtatool,{
@@ -213,34 +248,20 @@ server <- function(input, output) {
     
     output$fcmap_table <- renderUI({
       tags$ul(
-          tags$li('Mean forest owner WTA/acre:',fcmap_result_table()$c1),
-          tags$li(paste0('Mean value of private forest carbon in ', fcmap_result_table()$state ,' (acre): ',fcmap_result_table()$c2)),
+        tags$li(strong('State: '),fcmap_result_table()$state),
+        tags$li(strong('Acres owned: '), fcmap_result_table()$acres),
+        tags$li(strong('Contract Design: ')),
           tags$ul(
-              tags$li('Social value ($51/ton)'),
-              tags$li('California Market Value ($17/ton)'),
-              tags$li('Offset Value($3-$5/ton)'),
+              tags$li(strong('Agree to change harvesting practice: '), fcmap_result_table()$harvestingpractice),
+              tags$li(strong('Agree to develop a management plan: '), fcmap_result_table()$managementplan),
+              tags$li(strong('Preferred number of contract years: '), fcmap_result_table()$contractlength),
           ),
-          tags$li(paste0('Market programs offered in ',fcmap_result_table()$state,' : ')),
-          tags$ul(
-              tags$li("Max's Program: "),
-              tags$ul(
-                  tags$li(paste0('Average Payment: ', fcmap_result_table()$maxpayment)),
-                  tags$li(paste0('Contract Length: ', fcmap_result_table()$maxyear)),
-                  tags$li(paste0('Other Specifics: ')),
-                  tags$ul(
-                      tags$li(paste0("Max's favorite color is: ", fcmap_result_table()$maxcolor))
-                  )
-              ),
-              tags$li("Melissa's Program: "),
-              tags$ul(
-                  tags$li(paste0('Average Payment: ', fcmap_result_table()$melissapayment)),
-                  tags$li(paste0('Contract Length: ', fcmap_result_table()$melissayear)),
-                  tags$li(paste0('Other Specifics: ')),
-                  tags$ul(
-                      tags$li(paste0("Melissa's favorite color is: ", fcmap_result_table()$melissacolor))
-                  )
-              )
-          )
+        
+        br(),
+        tags$li(strong('Estimated market value of forest carbon sequestration services in your state: '), fcmap_result_table()$mlow, '-', fcmap_result_table()$mhigh),
+        tags$li(strong('Mean estimated payment acceptable to all forest owners: '), fcmap_result_table()$allown, ' (CI:', fcmap_result_table()$ao_low, '-', fcmap_result_table()$ao_high,')'),
+        tags$li(strong('Mean estimated payment acceptable to early adopter forest owners: '), fcmap_result_table()$earlyadopt, ' (CI:', fcmap_result_table()$ea_low, '-', fcmap_result_table()$ea_high,')')
+
       )  
     })
 }
