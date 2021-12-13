@@ -20,9 +20,9 @@ ui <- dashboardPage(
          menuItem("Links to Web Pages",tabName = 'links_tab', icon = icon('link')),
          menuItem('Water Quality Values',tabName = 'waterquality_tab', icon = icon('water')),
          menuItem('Forest Preservation Values',tabName ='forest_tab', icon = icon('tree')),
-         menuItem("FCMAP Tool", tabName = 'fcmap_tab', icon = icon('wrench')),
+         menuItem("Forest Carbon Pricing Calculator", tabName = 'fcmap_tab', icon = icon('wrench')),
          menuItem("WTA Tool", tabName = 'wta_tab', icon = icon('money'))
-        )
+        ), width = 250
     ),
     dashboardBody(
         tabItems(
@@ -87,13 +87,18 @@ ui <- dashboardPage(
                     
                     fluidRow(
                         box(width = 8,
-                            h2('Forest Carbon Market Assessment and Planning Tool (FCMAP)', align = 'center'),
-                            p("FCMAP is a simple calculator for family forest owners considering enrollment in a forest carbon market program. The value of carbon markets has steadily increased in recent years. However, the value of selling forest carbon compared to other forestland uses is not well understood by many forest owners. Comparing carbon prices with what most forest owners are willing to accept as payment can help you determine if, or when, carbon markets may be a good fit for your land management objectives."),
-                            p(strong("Data Sources:")," This tool uses data from multiple surveys to describe forest owner willingness to accept payment under different types of forest carbon contracts. It also uses data from the USDA Forest Inventory Analysis database to estimate the average amount of carbon sequestered by live trees per year on private forest lands in your state. The average rate of sequestration is an indicator of how much additional carbon could be stored per acre/year under certain management conditions. The additional carbon stored can then be valued using an assigned carbon price ($ dollars per metric ton). When the market price of carbon approaches values that are close to your preferred payment levels, it may be time to consider learning more about carbon market opportunities."),
+                            h2('Forest Carbon Pricing Calculator', align = 'center'),
+                            p("The value of carbon markets has steadily increased in recent years and are expected to triple in next decade. However, the value of selling forest carbon compared to other forestland uses is not well understood by many forest owners. The FCPC is a simple calculator that can help family forest owners determine if, or when, carbon markets may be a good fit for your land management objectives. This calculator will help forest owners answer two important questions: "),
+                            tags$ul(
+                              tags$li("What is the potential value of my forest for carbon storage services?"),
+                              tags$li("How much should I be paid for storing carbon under different management contracts?")
+                            ),
+                            p(strong("Data Sources: "),"The value of forest carbon depends on both forest composition and the price of carbon. To understand the carbon storage potential of private forests in different states we used data from the USDA Forest Inventory Analysis database. The average rate of carbon sequestration is an indicator of how much additional carbon could be stored per acre/year under certain management conditions. To understand the value of the additional carbon stored, the user assigns a carbon price ($ dollars per metric ton) using either current or future prices. The fees that could be collected by carbon project developers, who broker contracts with landowners, have already been factored into the estimated values. To help determine a fair level of payment, the calculator describes acceptable payment levels using data from multiple surveys assessing forest owner preferences for different carbon market contracts. Early adopters are expected to accept a lower level of payment compared to forest owners overall, due to differences in timber production objectives. When the value of carbon per acre approaches the recommended payment level for your preferred contract, it may be time to start talking to carbon market programs in your area."),
+                            p("Reported values are intended to promote interest in forest carbon markets and should not be used to make individual decisions about your land. Expected level of payment and contract design can only be determined by talking to a forest carbon market program. ", tags$a(href="http://www.google.com", "Click here "),"to learn more about which carbon market programs may be in your area."),
                             p(strong("Instructions:")),
                             tags$ol(tags$li("Use the drop-down menu to describe the location of your forest (i.e., state) and the number of acres you own."),
                             tags$li("Select which attributes you prefer in a forest carbon contract. Options include change in harvesting activities, adopting a management plan, and number of contract years."),
-                            tags$li("Select from a list of potential carbon prices to explore how changes in the carbon market may affect the value of carbon sequestration services on your land. Current mean prices range from $5 to $20 per metric ton. To understand more about carbon prices, click ", tags$a(href="http://www.google.com", "here."))
+                            tags$li("Select from a list of potential carbon prices to explore how changes in the carbon market may affect the value of carbon sequestration services on your land. Current mean prices range from $5 to $20 per metric ton. To understand more about carbon prices, ", tags$a(href="http://www.google.com", "click here."))
                             )
                             ),
                         box(width = 4,
@@ -105,7 +110,7 @@ ui <- dashboardPage(
                             selectInput('fcmap_carbonprice', 'Please select a market price for carbon ($/metric ton)', c('$5','$10','$20','$30','$40','$50','$60','$70','$80','$90','$100','$110','$120','$130','$140','$150'), '$80'),
                             bsTooltip("fcmap_managementplan", "A management plan is defined as a plan that one manages.", placement = 'left'),
                             bsTooltip("fcmap_acresowned", "Round to the nearest acre.", placement = 'left'),
-                            fluidRow(column(width = 12, align = 'center', actionButton('runtool', 'Run Tool')))
+                            fluidRow(column(width = 12, align = 'center', actionButton('runtool', 'Run Calculator')))
                             
                             )
                     ),
