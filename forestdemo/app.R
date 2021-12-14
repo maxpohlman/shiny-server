@@ -263,9 +263,9 @@ server <- function(input, output) {
           ),
         
         br(),
-        tags$li(strong('Estimated market value of forest carbon sequestration services in your state: '), fcmap_result_table()$mlow, '-', fcmap_result_table()$mhigh),
-        tags$li(strong('Mean estimated payment acceptable to all forest owners: '), fcmap_result_table()$allown, ' (CI:', fcmap_result_table()$ao_low, '-', fcmap_result_table()$ao_high,')'),
-        tags$li(strong('Mean estimated payment acceptable to early adopter forest owners: '), fcmap_result_table()$earlyadopt, ' (CI:', fcmap_result_table()$ea_low, '-', fcmap_result_table()$ea_high,')')
+        tags$li(strong('Estimated market value of forest carbon sequestration services in your state: '), fcmap_result_table()$mhigh, '-', fcmap_result_table()$mlow, ' (per acre per year)'),
+        tags$li(strong('Mean estimated payment acceptable to all forest owners: '), fcmap_result_table()$allown, ' (CI:', fcmap_result_table()$ao_low, '-', fcmap_result_table()$ao_high,')', ' (per acre per year)'),
+        tags$li(strong('Mean estimated payment acceptable to early adopter forest owners: '), fcmap_result_table()$earlyadopt, ' (CI:', fcmap_result_table()$ea_low, '-', fcmap_result_table()$ea_high,')', ' (per acre per year)')
 
       )  
     })
