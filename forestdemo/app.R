@@ -107,7 +107,7 @@ ui <- dashboardPage(
                             radioButtons('fcmap_harvestingpractice', 'Would you agree to changing your harvesting practices?', c('Yes', 'No'), 'Yes', inline = T),
                             radioButtons('fcmap_managementplan', 'Would you agree to developing a management plan?', c('Yes', 'No'), 'Yes', inline = T),
                             radioButtons('fcmap_contractlength', 'What is your preferred number of contract years?', c('No more than 1 year', 'Up to 20 years', 'Up to 50 years', 'Up to 100 years'), 'Up to 20 years'),
-                            selectInput('fcmap_carbonprice', 'Please select a market price for carbon ($/metric ton)', c('$5','$10','$20','$30','$40','$50','$60','$70','$80','$90','$100','$110','$120','$130','$140','$150'), '$80'),
+                            #selectInput('fcmap_carbonprice', 'Please select a market price for carbon ($/metric ton)', c('$5','$10','$20','$30','$40','$50','$60','$70','$80','$90','$100','$110','$120','$130','$140','$150'), '$80'),
                             bsTooltip("fcmap_managementplan", "A management plan is defined as a plan that one manages.", placement = 'left'),
                             bsTooltip("fcmap_acresowned", "Round to the nearest acre.", placement = 'left'),
                             fluidRow(column(width = 12, align = 'center', actionButton('runtool', 'Run Calculator')))
@@ -171,13 +171,17 @@ server <- function(input, output) {
     
     fcmap_result_table <- eventReactive(input$runtool, {
       
-      mlow <- marketprices %>% 
-        filter(state == input$fcmap_state) %>% 
-        pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'low'))
+      mlow <- 999
+        
+        # marketprices %>% 
+        # filter(state == input$fcmap_state) %>% 
+        # pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'low'))
       
-      mhigh <- marketprices %>% 
-        filter(state == input$fcmap_state) %>% 
-        pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'high'))
+      mhigh <- 999
+        
+        # marketprices %>% 
+        # filter(state == input$fcmap_state) %>% 
+        # pull(paste0('m',str_extract(input$fcmap_carbonprice,'\\d+'), 'high'))
       
       ao<- allowners %>%
         filter(`ownership  size` == input$fcmap_acresowned) %>%
@@ -263,7 +267,7 @@ server <- function(input, output) {
           ),
         
         br(),
-        tags$li(strong('Estimated market value of forest carbon sequestration services in your state: '), fcmap_result_table()$mhigh, '-', fcmap_result_table()$mlow, ' (per acre per year)'),
+        #tags$li(strong('Estimated market value of forest carbon sequestration services in your state: '), fcmap_result_table()$mhigh, '-', fcmap_result_table()$mlow, ' (per acre per year)'),
         tags$li(strong('Mean estimated payment acceptable to all forest owners: '), fcmap_result_table()$allown, ' (CI:', fcmap_result_table()$ao_low, '-', fcmap_result_table()$ao_high,')', ' (per acre per year)'),
         tags$li(strong('Mean estimated payment acceptable to early adopter forest owners: '), fcmap_result_table()$earlyadopt, ' (CI:', fcmap_result_table()$ea_low, '-', fcmap_result_table()$ea_high,')', ' (per acre per year)')
 
