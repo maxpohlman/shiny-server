@@ -97,12 +97,12 @@ ui <- dashboardPage(
                             p("Reported values are intended to promote interest in forest carbon markets and should not be used to make individual decisions about your land. Expected level of payment and contract design can only be determined by talking to a forest carbon market program. ", tags$a(href="http://www.google.com", "Click here "),"to learn more about which carbon market programs may be in your area."),
                             p(strong("Instructions:")),
                             tags$ol(tags$li("Use the drop-down menu to describe the location of your forest (i.e., state) and the number of acres you own."),
-                            tags$li("Select which attributes you prefer in a forest carbon contract. Options include change in harvesting activities, adopting a management plan, and number of contract years."),
-                            tags$li("Select from a list of potential carbon prices to explore how changes in the carbon market may affect the value of carbon sequestration services on your land. Current mean prices range from $5 to $20 per metric ton. To understand more about carbon prices, ", tags$a(href="http://www.google.com", "click here."))
+                            tags$li("Select which attributes you prefer in a forest carbon contract. Options include change in harvesting activities, adopting a management plan, and number of contract years.")
+                            #,tags$li("Select from a list of potential carbon prices to explore how changes in the carbon market may affect the value of carbon sequestration services on your land. Current mean prices range from $5 to $20 per metric ton. To understand more about carbon prices, ", tags$a(href="http://www.google.com", "click here."))
                             )
                             ),
                         box(width = 4,
-                            selectInput('fcmap_state', 'State', state.abb[state.abb != 'HI'], 'Pennsylvania'),
+                            #selectInput('fcmap_state', 'State', state.abb[state.abb != 'HI'], 'Pennsylvania'),
                             radioButtons('fcmap_acresowned', 'Forest Acres Owned', c('<20 acres','20-99 acres', '100-249 acres', '250-1000 acres', '>1000 acres' ), '100-249 acres', inline = T),
                             radioButtons('fcmap_harvestingpractice', 'Would you agree to changing your harvesting practices?', c('Yes', 'No'), 'Yes', inline = T),
                             radioButtons('fcmap_managementplan', 'Would you agree to developing a management plan?', c('Yes', 'No'), 'Yes', inline = T),
@@ -257,7 +257,7 @@ server <- function(input, output) {
     
     output$fcmap_table <- renderUI({
       tags$ul(
-        tags$li(strong('State: '),fcmap_result_table()$state),
+       # tags$li(strong('State: '),fcmap_result_table()$state),
         tags$li(strong('Acres owned: '), fcmap_result_table()$acres),
         tags$li(strong('Contract Design: ')),
           tags$ul(
