@@ -198,7 +198,7 @@ server <- function(input, output) {
       ea_high <- as.numeric(str_extract(ea, '\\d+')) * 1.25 
       
         tibble(
-               state = input$fcmap_state,
+               #state = input$fcmap_state,
                acres = input$fcmap_acresowned,
                harvestingpractice = input$fcmap_harvestingpractice,
                managementplan = input$fcmap_managementplan,
